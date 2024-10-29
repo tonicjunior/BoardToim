@@ -1,6 +1,15 @@
 * {
   cursor: url("../src/assets/sword.png"), auto;
 }
+
+html{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -8,6 +17,7 @@ body {
   align-items: center;
   background-color: #282c34;
   perspective: 1000px;
+  width: 90%;
 }
 
 #game-container {
@@ -128,7 +138,7 @@ body {
   padding: 10px;
   background-color: #f8f9fa;
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-top: 10px;
   color: #495057;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -333,4 +343,5 @@ body.modal-open {
 
 .time-remaining{
   width: max-content;
+
 }
