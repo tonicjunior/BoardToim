@@ -37,10 +37,10 @@
 ## Regras do Jogo
 
 Cada jogador possui um conjunto de peças com habilidades distintas:
-- **Guerreiros (4 peças - Laranja)**: Derrotam outros Guerreiros e o Dragão.
-- **Magos (2 peças - Roxo)**: Podem derrotar outros Magos e Guerreiros.
-- **Morte (2 peças - Vermelho)**: Derrota qualquer peça, mas é eliminada no processo.
-- **Dragão (1 peça - Branco)**: Pode derrotar qualquer peça, mas é afetado pela Morte.
+- ![](src/assets/c.png) **Guerreiros (4 peças)**: Derrotam outros Guerreiros e o Dragão.
+- **Magos (2 peças)**: Podem derrotar outros Magos e Guerreiros.
+- **Morte (2 peças)**: Derrota qualquer peça, mas é eliminada no processo.
+- **Dragão (1 peça)**: Pode derrotar qualquer peça, mas é afetado pela Morte.
 
 A partida reinicia automaticamente quando um jogador vence, e as cores das peças são sorteadas novamente.
 
