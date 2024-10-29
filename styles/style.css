@@ -294,6 +294,13 @@ body.modal-open {
   color: #333;
 }
 
+.info-paragraph {
+  font-size: 0.9rem;
+  margin: 10px 0px;
+  font-style: italic;
+  color: #333;
+}
+
 
 .info-list {
   list-style: none;
