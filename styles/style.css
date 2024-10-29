@@ -345,3 +345,20 @@ body.modal-open {
   width: max-content;
 
 }
+
+
+@media (max-width: 500px) {
+ 
+#timer-container {
+  font-size: 1rem;
+}
+
+#timer {
+  font-size: 1rem;
+}
+
+#timer span#time-display {
+  font-size: 1.1rem;
+}
+
+}
