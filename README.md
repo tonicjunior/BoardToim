@@ -3,6 +3,10 @@
 
 **BoardToim** é um jogo de tabuleiro multiplayer baseado em navegador que oferece uma experiência de combate estratégico com diferentes tipos de peças e regras de eliminação. Desenvolvido com tecnologias modernas, como Bootstrap, jQuery e PeerJS, **BoardToim** permite que dois jogadores conectem-se remotamente para batalhas intensas em um tabuleiro dinâmico.
 
+## 🚀 Link para Jogar
+
+👉 [Clique aqui para jogar!](tonicjunior.github.io/BoardToim/)
+
 ## Índice
 
 - [Funcionalidades](#funcionalidades)
