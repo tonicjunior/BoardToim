@@ -5,7 +5,7 @@
 
 ## 🚀 Link para Jogar
 
-👉 [Clique aqui para jogar!](tonicjunior.github.io/BoardToim/)
+👉 [Clique aqui para jogar!](https://tonicjunior.github.io/BoardToim/)
 
 ## Índice
 
