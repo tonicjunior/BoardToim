@@ -58,7 +58,6 @@ BoardToim/
 ├── index.html          # Estrutura principal da aplicação
 ├── src/
 │   ├── app.js          # Lógica do jogo e manipulação de eventos
-│   └── board.js        # Lógica do tabuleiro e movimentação das peças
 ├── styles/
 │   └── style.css       # Estilos customizados para o jogo
 └── README.md           # Documentação do projeto
