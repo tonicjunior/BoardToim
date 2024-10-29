@@ -10,7 +10,6 @@
 - [Regras do Jogo](#regras-do-jogo)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Tecnologias Usadas](#tecnologias-usadas)
-- [Contribuições](#contribuições)
 - [Licença](#licença)
 
 ## Funcionalidades
@@ -65,10 +64,6 @@ BoardToim/
 - **jQuery 3.6.0**: Manipulação DOM simplificada.
 - **PeerJS 1.5.0**: Implementação de comunicação peer-to-peer para conectar jogadores.
 - **JavaScript ES6+**: Lógica de jogo e manipulação de eventos.
-
-## Contribuições
-
-Contribuições são bem-vindas! Por favor, siga as etapas de **fork** do repositório e abra um **pull request** para análise. Para sugestões de melhorias, sinta-se à vontade para abrir uma **issue**.
 
 ## Licença
 
