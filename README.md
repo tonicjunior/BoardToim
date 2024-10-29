@@ -21,7 +21,7 @@
 - **Multiplayer Peer-to-Peer**: Conexão entre dois jogadores usando IDs de sessão gerados via PeerJS.
 - **Interface Responsiva**: Layout adaptável para dispositivos móveis e desktops, utilizando Bootstrap.
 - **Regras Customizáveis**: Cada peça possui um conjunto específico de regras para movimentação e ataque.
-- **Timer de Turno**: Limite de 15 segundos para cada jogador realizar uma ação, destacando a vez ativa.
+- **Timer de Turno**: Limite de 10 segundos para cada jogador realizar uma ação, destacando a vez ativa.
 - **Modal Interativo**: Modal de confirmação e exibição de informações de jogo.
 - **Cores Dinâmicas das Peças**: Peças coloridas com atributos específicos que são sorteados a cada nova partida.
 
