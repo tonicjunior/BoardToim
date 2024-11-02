@@ -2,6 +2,14 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta content="BoardToim | TONI" property="og:site_name">
+    <meta content="src/assets/cerveja.png" property="og:image">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BoardToim</title>
 
@@ -9,114 +17,297 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/peerjs@1.5.0/dist/peerjs.min.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <div class="container" id="container">
-    <div class="input-container">
-      <div class="input-group mt-4">
-        <input
-          type="text"
-          id="game-id"
-          class="form-control"
-          value=""
-          disabled
-          aria-label="ID do Jogo"
+    <div id="loading-screen">
+      <div class="rpg-container">
+        <img
+          src="src/assets/pergaminho.png"
+          alt="Pergaminho"
+          class="pergaminho-img"
         />
-        <button
-          class="btn btn-outline-secondary width-button"
-          id="copyButton"
-          data-bs-toggle="tooltip"
-          title="Copiado!"
-        >
-          Copiar
-        </button>
-      </div>
-      
-      <div class="input-group  margin-button">
-        <input
-          type="text"
-          id="peer-id-input"
-          class="form-control"
-          placeholder="Insira o ID do Adversário"
-          aria-label="Nome do Jogador"
-        />
-        <button class="btn btn-primary width-button" onclick="clickGame()">Jogar</button>
+        <p class="loading-text">Preparando o campo de batalha...</p>
+
+        <!-- Barra de progresso -->
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+        <!-- Animação das peças abaixo da barra de loading -->
+        <div class="characters-container">
+          <img
+            src="src/assets/c.png"
+            alt="Guerreiro"
+            class="character-animation"
+          />
+          <img src="src/assets/m.png" alt="Mago" class="character-animation" />
+          <img src="src/assets/f.png" alt="Morte" class="character-animation" />
+          <img
+            src="src/assets/d.png"
+            alt="Dragão"
+            class="character-animation"
+          />
+        </div>
       </div>
     </div>
 
-    <div class="info-container">
-      <h4 class="info-title">🏰 Regras do Jogo</h4>
-      <h5 class="info-subtitle">Cada jogador comanda um exército de peças lendárias, cada uma com habilidades especiais e destemidas. Prepare-se para uma batalha épica:</h5>
-      <ul class="info-list">
-        <li><span class="pieces-index orange"></span> **Guerreiros (4 peças)**: Esses bravos lutadores são durões, sempre prontos para esmagar qualquer outro Guerreiro que entre em seu caminho... e até encarar o temível Dragão!</li>
-        <li><span class="pieces-index purple"></span> **Magos (2 peças)**: Mestres das artes místicas, os Magos são ardilosos! Com seus feitiços, eles podem desintegrar outros Magos ou até acabar com os orgulhosos Guerreiros. Mas cuidado: eles são poderosos, mas não invencíveis!</li>
-        <li><span class="pieces-index red"></span> **Morte (2 peças)**: Implacável e sinistra, a Morte não faz distinção. Derrota qualquer um que ousar desafiá-la... só que paga o preço final e vai junto! Escolha bem quando libertar esse poder sombrio.</li>
-        <li><span class="pieces-index white"></span> **Dragão (1 peça)**: A fera suprema, temida por todos no campo de batalha! O Dragão incinera qualquer peça que cruze seu caminho, mas até ele deve temer a presença da Morte. Use-o com sabedoria e terror!</li>
-      </ul>
-      <p class="info-paragraph">⚔️ **Aviso de Guerra**: Quando a batalha termina e um jogador conquista a vitória, o jogo começa novamente, mas o caos do destino move todas as peças. Cada nova batalha traz surpresas!</p>
+    <div class="container" id="container">
+      <div class="input-container">
+        <div class="input-group mt-4">
+          <input
+            type="text"
+            id="game-id"
+            class="form-control"
+            value=""
+            disabled
+            aria-label="ID do Jogo"
+          />
+          <button
+            class="btn btn-outline-secondary width-button"
+            id="copyButton"
+            data-bs-toggle="tooltip"
+            title="Copiado!"
+          >
+            Copiar
+          </button>
+        </div>
+
+        <div class="input-group margin-button">
+          <input
+            type="text"
+            id="peer-id-input"
+            class="form-control"
+            placeholder="Insira o ID do Adversário"
+            aria-label="Nome do Jogador"
+          />
+          <button class="btn btn-primary width-button" onclick="clickGame()">
+            Jogar
+          </button>
+        </div>
+
+        <!-- Botão para abrir a lista de usuários -->
+        <a href="#" class="btn btn-rpg width-button" id="userListButton">
+          <img
+            src="src/assets/cerveja.png"
+            alt="Taberna"
+            class="taberna-icon"
+          />
+          Lista de Usuários
+        </a>
+      </div>
+
+      <div class="info-container">
+        <h4 class="info-title">🏰 Regras do Jogo</h4>
+        <h5 class="info-subtitle">
+          Cada jogador comanda um exército de peças lendárias, cada uma com
+          habilidades especiais e destemidas. Prepare-se para uma batalha épica:
+        </h5>
+        <ul class="info-list">
+          <li>
+            <span class="pieces-index orange"></span> **Guerreiros (4 peças)**:
+            Esses bravos lutadores são durões, sempre prontos para esmagar
+            qualquer outro Guerreiro que entre em seu caminho... e até encarar o
+            temível Dragão!
+          </li>
+          <li>
+            <span class="pieces-index purple"></span> **Magos (2 peças)**:
+            Mestres das artes místicas, os Magos são ardilosos! Com seus
+            feitiços, eles podem desintegrar outros Magos ou até acabar com os
+            orgulhosos Guerreiros. Mas cuidado: eles são poderosos, mas não
+            invencíveis!
+          </li>
+          <li>
+            <span class="pieces-index red"></span> **Morte (2 peças)**:
+            Implacável e sinistra, a Morte não faz distinção. Derrota qualquer
+            um que ousar desafiá-la... só que paga o preço final e vai junto!
+            Escolha bem quando libertar esse poder sombrio.
+          </li>
+          <li>
+            <span class="pieces-index white"></span> **Dragão (1 peça)**: A fera
+            suprema, temida por todos no campo de batalha! O Dragão incinera
+            qualquer peça que cruze seu caminho, mas até ele deve temer a
+            presença da Morte. Use-o com sabedoria e terror!
+          </li>
+        </ul>
+        <p class="info-paragraph">
+          ⚔️ **Aviso de Guerra**: Quando a batalha termina e um jogador
+          conquista a vitória, o jogo começa novamente, mas o caos do destino
+          move todas as peças. Cada nova batalha traz surpresas!
+        </p>
+      </div>
     </div>
-    
-    
-  </div>
 
     <div id="game-container">
       <div id="board"></div>
 
-    
-      <div id="timer-container">
-        <span id="player-turn">Vez do jogador:</span>
-        <div id="timer"><span id="time-display">10</span><span class="time-remaining">s restantes</span></div>
-      </div>
-    </div>
+      <div class="timer-container" id="timer-container">
+        <span id="player-turn"></span>
+        <div id="timer">
+          <span id="time-display">0</span>
+          <span class="time-remaining">s restantes</span>
+        </div>
 
-  
-    <div
-      class="modal fade"
-      id="myModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-      data-bs-backdrop="static"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalTitle">.</h5>
+        <div class="dropdown">
+          <div class="image-container">
+            <img
+              src="src/assets/pergaminho.png"
+              onclick="toggleDropdown()"
+              class="dropbtn"
+              alt="Opções"
+            />
           </div>
-          <div class="modal-body" id="modalBody"></div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              id="confirmButton"
-              data-bs-dismiss="modal"
+          <div id="dropdown-menu" class="dropdown-content">
+            <div class="dropdown-item">
+              <a href="#" id="tie-option" onclick="tie()">
+                <img
+                  src="src/assets/tq.png"
+                  class="icone-img"
+                  alt="empatar"
+                />Empatar</a
+              >
+              <span id="tie-timer" style="margin-left: 10px"></span>
+            </div>
+            <a href="#" onclick="surrender()">
+              <img
+                src="src/assets/bb.png"
+                class="icone-img"
+                alt="render"
+              />Render</a
             >
-              Confirmar
-            </button>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Modal Informativa -->
+    <div id="modalRPGInfo" class="rpg-modal-overlay hide">
+      <div class="rpg-modal-content">
+        <h3 class="rpg-modal-title">📜 <span id="modalTitle"></span></h3>
+        <p id="rpgInfoMessage"></p>
+        <button class="rpg-modal-btn" id="confirmButton">Confirmar</button>
+        <button
+          id="cancelButton"
+          class="rpg-modal-btn rpg-modal-cancel"
+          onclick="closeRPGModal('modalRPGInfo')"
+        >
+          Cancelar
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal com Input -->
+    <div id="modalRPGInput" class="rpg-modal-overlay hide">
+      <div class="rpg-modal-content">
+        <h3 class="rpg-modal-title">⚔️ Atenção, Grande Aventureiro!</h3>
+        <label for="rpgPlayerNick" class="rpg-modal-label"
+          >Digite um nickname épico que faça até os dragões tremerem de
+          medo!</label
+        >
+        <input
+          type="text"
+          id="rpgPlayerNick"
+          class="rpg-modal-input"
+          placeholder="Ex: NarutoUzocrack"
+        />
+        <button class="rpg-modal-btn" onclick="saveNickname()">
+          Confirmar
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal da Lista de Jogadores -->
+    <div id="modalUserList" class="rpg-modal-overlay hide">
+      <div class="rpg-modal-content">
+        <h3 class="rpg-modal-title">👥 Usuários Online</h3>
+        <ul id="userList" class="list-group">
+          <!-- Os usuários online serão adicionados aqui -->
+        </ul>
+        <button class="rpg-modal-btn" onclick="closeUserListModal()">
+          Fechar
+        </button>
+      </div>
+    </div>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const copyButton = document.getElementById('copyButton');
-        const tooltip = new bootstrap.Tooltip(copyButton, { trigger: 'manual' });
+        // Remove o loading screen após 5 segundos
+        setTimeout(() => {
+          const loadingScreen = document.getElementById("loading-screen");
+          if (loadingScreen) {
+            loadingScreen.style.display = "none"; // Esconde o loading
+          }
 
-        copyButton.addEventListener('click', () => {
-          const gameId = document.getElementById('game-id').value;
+          const style = document.createElement("style");
+          style.innerHTML = `
+          html {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 10px;
+            overflow-x: hidden;
+          }
+
+          body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #282c34;
+            perspective: 1000px;
+            width: 90%;
+            height: 90vh;
+          }
+        `;
+          document.head.appendChild(style);
+        }, 5000);
+      });
+      function toggleDropdown() {
+        document.getElementById("dropdown-menu").classList.toggle("show");
+      }
+
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const copyButton = document.getElementById("copyButton");
+        const tooltip = new bootstrap.Tooltip(copyButton, {
+          trigger: "manual",
+          placement: "top",
+          container: "html",
+        });
+
+        window.addEventListener("resize", () => {
+          tooltip.hide();
+          tooltip.show();
+        });
+
+        copyButton.addEventListener("click", () => {
+          const gameId = document.getElementById("game-id").value;
           navigator.clipboard.writeText(gameId).then(() => {
             tooltip.show();
-            setTimeout(() => tooltip.hide(), 1500); 
+            setTimeout(() => tooltip.hide(), 1500);
           });
         });
       });
     </script>
-    
+
     <script src="src/app.js"></script>
   </body>
 </html>
