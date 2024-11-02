@@ -2,32 +2,14 @@
   cursor: url("../src/assets/sword.png"), auto;
 }
 
-html{
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 10px;
-  overflow-x: hidden;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #282c34;
-  perspective: 1000px;
-  width: 90%;
-}
 
 #game-container {
   display: none;
-  margin-top: -30px;
- 
+  margin-top: -30px; 
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   transform: rotateX(25deg);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
   flex-direction: column-reverse;
@@ -38,33 +20,32 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  gap: 10px;
+  gap: 6px;
   width: 100%;
   height: auto;
   transform-style: preserve-3d;
+  background-image: url('../src/assets/solo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .cell {
   width: 100%;
   padding-top: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  
-  background-color: #1197b8;
-  /* background-image: url('../src/assets/seca.png'); 
-  background-size: cover; 
-  background-position: center; 
-  background-size:  15rem; */
+  background-color: #282c3400;  
+  border: 2px solid rgba(100, 100, 100, 0.4);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
 .cell:hover {
-  background-color: #21a1f1;
+  background-color: #21a1f173;
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
@@ -82,15 +63,15 @@ body {
 }
 
 .selected {
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.500);
 }
 
 .move-allowed {
-  background-color: lightgreen;
+  background-color: rgba(144, 238, 144, 0.500);
 }
 
 .move-blocked {
-  background-color: lightcoral;
+  background-color: rgba(240, 128, 128,0.500);
 }
 
 .piece {
@@ -99,7 +80,8 @@ body {
   position: absolute; 
   top: 50%; 
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);  
+  background-repeat: no-repeat;
 }
 
 .white {
@@ -115,7 +97,7 @@ body {
 }
 
 .no-hover:hover {
-  background-color: inherit;
+  background-color: rgba(0, 0, 0, 0.493);
   transform: none;
 }
 
@@ -131,42 +113,26 @@ body {
   background-position: center; 
 }
 
-#timer-container {
+.button-container{
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10%;
   padding: 10px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
+  background-color: #f8f9fa;  
+  border-radius: 0px 0px 8px 8px;
   font-size: 1.3rem;
-  margin-top: 10px;
+  margin-bottom: 5px;
   color: #495057;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
 }
 
-#timer {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-  font-weight: bold;
-  font-size: 1.5rem;
+.button-container button{
+width: 40%;
+font-size: 1.7rem;
 }
 
-#timer span#time-display {
-  padding: 0 5px;
-  font-size: 1.6rem;
-  color: #28a745;
-  transition: color 0.3s ease;
-}
-
-#timer-container.warning #time-display {
-  color: #ff9800;
-}
-
-#timer-container.danger #time-display {
-  color: #dc3545;
-}
 
 .highlight-invalid {
   background-color: red;
@@ -207,16 +173,15 @@ body {
 
 
 @media (max-width: 600px) {
- 
-  body {
-    perspective: 800px;
-    height: 100vh;
+
+  
+.button-container button{
+  font-size: 16px;
   }
 
-  #game-container {
-    padding: 0 50px;
+  #board{
+    gap:3px;
   }
-
   .container {
     flex-direction: column; 
     width: 90%; 
@@ -269,6 +234,27 @@ body {
 
 .width-button {
   width: 100px;
+}
+
+.surrender{
+  background-image: url('../src/assets/bb.png'); 
+  background-size: cover; 
+  background-position: center; 
+   padding: 2rem;
+ 
+  border: none;
+  border-radius: 5px;
+
+}
+
+.tie{
+  background-image: url('../src/assets/tq.png'); 
+  background-size: cover; 
+  background-position: center; 
+   padding: 2rem;
+ 
+  border: none;
+  border-radius: 5px;
 }
 
 .piece.hidden-color {
@@ -349,16 +335,358 @@ body.modal-open {
 
 @media (max-width: 500px) {
  
-#timer-container {
-  font-size: 1rem;
+  #timer-container {
+    font-size: 1rem;
+  }
+
+  #timer {
+    font-size: 1rem;
+  }
+
+  #timer span#time-display {
+    font-size: 1.1rem;
+  }
+}
+
+
+.rpg-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.hide {
+  display: none;
+}
+
+
+.rpg-modal-content {
+  background: #f7f1e3;
+  border: 3px solid #8b5e34;
+  border-radius: 15px;
+  padding: 20px;
+  width: 30rem;
+  text-align: center;
+  font-family: 'Garamond', serif;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+.rpg-modal-title {
+  font-size: 2.1em;
+  color: #6c3f2e;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+#rpgInfoMessage{
+  font-size: 1.2em;
+}
+
+.rpg-modal-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.rpg-modal-input {
+  width: 90%;
+  padding: 8px;
+  margin: 10px 0;
+  font-family: 'Garamond', serif;
+  border-radius: 10px;
+}
+
+.rpg-modal-btn {
+  background-color: #6c3f2e;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Garamond', serif;
+  width: 40%;
+}
+
+.rpg-modal-btn:hover {
+  background-color: #8b5e34;
+}
+
+.rpg-modal-cancel {
+  background-color: #b08968;
+}
+
+.rpg-modal-cancel:hover {
+  background-color: #8b5e34;
+}
+
+
+#modalRPGInfo {
+  transform: rotateX(15deg); 
+  transform-style: preserve-3d; 
+  transition: transform 0.3s ease; 
+}
+
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0px 0px;
+  font-size: 1.3rem;
+  color: #495057;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  position: relative;
+  flex-direction: column
+}
+
+.dropdown {
+  position: absolute;
+  right: 10px;
+}
+
+.image-container {
+  max-width: 100vw;
+  max-height: 100px;
+}
+
+.image-container img {
+  width: auto;
+  height: 100%;
+}
+
+.icone-img{
+  width: 40px;
+  margin-right: 10px;
 }
 
 #timer {
-  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-#timer span#time-display {
-  font-size: 1.1rem;
+#time-display {
+  padding: 0 5px;
+  font-size: 1.6rem;
+  color: #28a745;
+  transition: color 0.3s ease;
 }
 
+.timer-container.warning #time-display {
+  color: #ff9800;
+}
+
+.timer-container.danger #time-display {
+  color: #dc3545;
+}
+
+.time-remaining {
+  width: max-content;
+}
+
+.dropbtn {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #6c757d;
+  transition: color 0.3s;
+}
+
+.dropbtn:hover {
+  color: #5a6268;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9e3d6;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  min-width: 120px;
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  width: max-content;
+}
+
+.dropdown-content a {
+  color: #495057;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #e9ecef;
+}
+
+.dropdown-item:hover {
+  background-color: #e9ecef;
+}
+
+
+.show {
+  display: block;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+
+
+#loading-screen {
+  position: fixed; 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: #f4e5c4;
+  font-family: 'Papyrus', fantasy;
+  z-index: 9999;
+}
+
+
+.rpg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.pergaminho-img {
+  max-width: 300px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+
+.loading-text {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+
+.progress-bar {
+  width: 80%;
+  max-width: 300px;
+  height: 20px;
+  background-color: #4b3621;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  background-color: #82c91e;
+  animation: loading 5s linear forwards;
+  border-radius: 10px;
+}
+
+@keyframes loading {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+
+@keyframes moveCharacter {
+  0% {
+    transform: translateX(-400%) rotate(-10deg);
+  }
+  10% {
+    transform: translateX(-300%) rotate(10deg);
+  }
+  20% {
+    transform: translateX(-200%) rotate(-10deg);
+  }
+  30% {
+    transform: translateX(-100%) rotate(10deg);
+  }
+  40% {
+    transform: translateX(0%) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(100%) rotate(0deg);
+  }
+  60% {
+    transform: translateX(200%) rotate(10deg);
+  }
+  70% {
+    transform: translateX(300%) rotate(-10deg);
+  }
+  80% {
+    transform: translateX(400%) rotate(10deg);
+  }
+  90% {
+    transform: translateX(500%) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(600%) rotate(0deg);
+  }
+}
+
+.character-animation {
+  position: relative;
+  animation: moveCharacter 5s linear forwards;
+  max-width: 3rem;
+}
+
+.characters-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+
+.list-group-item:hover {
+  background-color: #21a1f173;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.btn-rpg {
+  width: auto;
+  color: #8B4513;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid #DAA520;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-rpg:hover {
+  background-color: #a0512db7;
+  transform: scale(1.05);
+  color: white;
+}
+
+.taberna-icon {
+  width: 40px;
+  height: auto;
+  margin-right: 8px;
 }
