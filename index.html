@@ -227,7 +227,11 @@
     <!-- Modal da Lista de Jogadores -->
     <div id="modalUserList" class="rpg-modal-overlay hide">
       <div class="rpg-modal-content">
-        <h3 class="rpg-modal-title">👥 Usuários Online</h3>
+        <h3 class="rpg-modal-title">⚔️ Usuários Online</h3>
+        <div id="loadingModal" class="loading-modal hide">
+          <div class="loading-bar"></div>
+          <p>Carregando...</p>
+        </div>
         <ul id="userList" class="list-group">
           <!-- Os usuários online serão adicionados aqui -->
         </ul>
@@ -236,6 +240,8 @@
         </button>
       </div>
     </div>
+    
+    
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
