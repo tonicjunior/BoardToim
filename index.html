@@ -2,9 +2,9 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta content="BoardToim | TONI" property="og:site_name">
-    <meta content="src/assets/cerveja.png" property="og:image">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta content="BoardToim | TONI" property="og:site_name" />
+    <meta content="src/assets/cerveja.png" property="og:image" />
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
@@ -94,15 +94,34 @@
           </button>
         </div>
 
-        <!-- Botão para abrir a lista de usuários -->
-        <a href="#" class="btn btn-rpg width-button" id="userListButton">
-          <img
-            src="src/assets/cerveja.png"
-            alt="Taberna"
-            class="taberna-icon"
-          />
-          Lista de Usuários
-        </a>
+        <!-- Loading da Taverna -->
+        <div class="taverna-loading-overlay" id="tavernaLoading">
+          <div class="taverna-loading-content">
+            <img
+              src="src/assets/cerveja.png"
+              alt="cervejinha"
+              class="taverna-cerveja"
+            />
+            <p class="taverna-loading-text">
+              Aguarde, estamos enchendo as canecas...
+            </p>
+            <div class="taverna-progress-bar">
+              <div class="taverna-progress-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão da Taverna -->
+        <div class="container mt-4">
+          <a href="#" class="btn btn-rpg width-button" id="userListButton">
+            <img
+              src="src/assets/cerveja.png"
+              alt="Taverna"
+              class="taverna-icon"
+            />
+            <span> Taverna Caldeirão Furado </span>
+          </a>
+        </div>
       </div>
 
       <div class="info-container">
@@ -183,6 +202,13 @@
                 alt="render"
               />Render</a
             >
+            <a href="#" onclick="exit()">
+              <img
+                src="src/assets/exit.png"
+                class="icone-img"
+                alt="sair"
+              />Sair</a
+            >
           </div>
         </div>
       </div>
@@ -228,9 +254,10 @@
     <div id="modalUserList" class="rpg-modal-overlay hide">
       <div class="rpg-modal-content">
         <h3 class="rpg-modal-title">⚔️ Usuários Online</h3>
-        <div id="loadingModal" class="loading-modal hide">
-          <div class="loading-bar"></div>
-          <p>Carregando...</p>
+        <div class="loading-div">
+          <div id="loadingModal" class="loading-modal hide">
+            <div class="loading-bar"></div>
+          </div>
         </div>
         <ul id="userList" class="list-group">
           <!-- Os usuários online serão adicionados aqui -->
@@ -240,42 +267,9 @@
         </button>
       </div>
     </div>
-    
-    
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Remove o loading screen após 5 segundos
-        setTimeout(() => {
-          const loadingScreen = document.getElementById("loading-screen");
-          if (loadingScreen) {
-            loadingScreen.style.display = "none"; // Esconde o loading
-          }
-
-          const style = document.createElement("style");
-          style.innerHTML = `
-          html {
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 10px;
-            overflow-x: hidden;
-          }
-
-          body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #282c34;
-            perspective: 1000px;
-            width: 90%;
-            height: 90vh;
-          }
-        `;
-          document.head.appendChild(style);
-        }, 5000);
-      });
+    
       function toggleDropdown() {
         document.getElementById("dropdown-menu").classList.toggle("show");
       }
@@ -298,11 +292,6 @@
           trigger: "manual",
           placement: "top",
           container: "html",
-        });
-
-        window.addEventListener("resize", () => {
-          tooltip.hide();
-          tooltip.show();
         });
 
         copyButton.addEventListener("click", () => {
