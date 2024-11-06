@@ -1,30 +1,78 @@
+/* Cursor padrão (default) */
 * {
-  cursor: url("../src/assets/sword.png"), auto;
+  cursor: url("../src/assets/images/cursor.png"), default;
 }
 
+/* Cursor para ponteiros (pointer), como em links ou botões  3 4*/
+a,
+button,
+a,
+.icone-img,
+.dropbtn,
+.dropdown-content,
+.dropdown-item,
+#tie-timer,
+.cell,
+.piece,
+input {
+  cursor: url("../src/assets/images/cursor.png"), pointer !important;
+}
+
+.no-hover,
+.hidden-color,
+.list-group-item {
+  cursor: url("../src/assets/images/duel.png") 3 4, default !important;
+}
+
+.oculto {
+  display: none;
+}
+
+#tie-timer {
+  margin-left: 10px;
+}
 
 #game-container {
   display: none;
-  margin-top: -30px; 
+  margin-top: -30px;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 700px;
+  max-width: 650px; /* Limite máximo */
   transform: rotateX(25deg);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
   flex-direction: column-reverse;
+}
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  #game-container {
+    max-width: 90%; /* Usa 90% da largura da tela em dispositivos menores */
+    margin-top: -20px; /* Ajusta o espaçamento */
+    transform: rotateX(
+      20deg
+    ); /* Reduz a inclinação para melhorar a visualização */
+  }
+}
+
+@media (max-width: 480px) {
+  #game-container {
+    max-width: 100%; /* Usa toda a largura da tela em dispositivos muito pequenos */
+    margin-top: -10px;
+    transform: rotateX(15deg); /* Ajuste menor na inclinação */
+  }
 }
 
 #board {
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  /* As dimensões da grade são agora ajustáveis com CSS variables */
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
   gap: 6px;
   width: 100%;
   height: auto;
   transform-style: preserve-3d;
-  background-image: url('../src/assets/solo.jpg');
+  background-image: url("../src/assets/images/solo.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,14 +80,15 @@
 
 .cell {
   width: 100%;
-  padding-top: 100%;
+  padding-top: 90%;
   border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
   position: relative;
-  background-color: #282c3400;  
+  background-color: #282c3400;
   border: 2px solid rgba(100, 100, 100, 0.4);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
@@ -63,37 +112,38 @@
 }
 
 .selected {
-  background-color: rgba(255, 255, 0, 0.500);
+  background-color: rgba(255, 255, 0, 0.5);
 }
 
 .move-allowed {
-  background-color: rgba(144, 238, 144, 0.500);
+  background-color: rgba(144, 238, 144, 0.5);
 }
 
 .move-blocked {
-  background-color: rgba(240, 128, 128,0.500);
+  background-color: rgba(240, 128, 128, 0.5);
 }
 
 .piece {
-  width: 55%; 
-  height: 55%; 
-  position: absolute; 
-  top: 50%; 
+  width: 51%;
+  height: 57%;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  
+  transform: translate(-50%, -50%);
   background-repeat: no-repeat;
+  z-index: 9;
 }
 
 .white {
-  background-image: url('../src/assets/d.png'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url("../src/assets/images/d.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .red {
-  background-image: url('../src/assets/f.png'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url("../src/assets/images/f.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .no-hover:hover {
@@ -102,24 +152,44 @@
 }
 
 .purple {
-  background-image: url('../src/assets/m.png'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url("../src/assets/images/m.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .orange {
-  background-image: url('../src/assets/c.png'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url("../src/assets/images/c.png");
+  background-size: cover;
+  background-position: center;
 }
 
-.button-container{
+.green {
+  background-image: url("../src/assets/images/w.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hidden-magic {
+  background-image: url(../src/assets/images/pent.png);
+  background-size: cover;
+  opacity: 0.8;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  z-index: 1;
+  padding: 50%;
+}
+
+.button-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10%;
   padding: 10px;
-  background-color: #f8f9fa;  
+  background-color: #f8f9fa;
   border-radius: 0px 0px 8px 8px;
   font-size: 1.3rem;
   margin-bottom: 5px;
@@ -128,11 +198,10 @@
   width: 100%;
 }
 
-.button-container button{
-width: 40%;
-font-size: 1.7rem;
+.button-container button {
+  width: 40%;
+  font-size: 1.7rem;
 }
-
 
 .highlight-invalid {
   background-color: red;
@@ -140,11 +209,12 @@ font-size: 1.7rem;
 }
 
 .container {
+  margin: auto;
   display: flex;
   justify-content: center;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   flex-direction: column;
 }
 
@@ -171,27 +241,23 @@ font-size: 1.7rem;
   background-color: #218838;
 }
 
-
 @media (max-width: 600px) {
-
-  
-.button-container button{
-  font-size: 16px;
+  .button-container button {
+    font-size: 16px;
   }
 
-  #board{
-    gap:3px;
+  #board {
+    gap: 3px;
   }
   .container {
-    flex-direction: column; 
-    width: 90%; 
-    margin: auto; 
-    align-items: center; /
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
   }
 
   .input-field {
     margin-bottom: 10px;
-    width: 100%; 
+    width: 100%;
   }
 }
 
@@ -202,7 +268,7 @@ font-size: 1.7rem;
 
 .input-wrapper {
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 .input-field {
@@ -214,13 +280,13 @@ font-size: 1.7rem;
 }
 
 .copiar-icon {
-  cursor: pointer; 
-  color: #28a745; 
+  cursor: pointer;
+  color: #28a745;
   margin-left: 10px;
 }
 
 .copiar-icon:hover {
-  color: #218838; 
+  color: #218838;
 }
 
 .tooltip {
@@ -236,31 +302,30 @@ font-size: 1.7rem;
   width: 100px;
 }
 
-.surrender{
-  background-image: url('../src/assets/bb.png'); 
-  background-size: cover; 
-  background-position: center; 
-   padding: 2rem;
- 
+.surrender {
+  background-image: url("../src/assets/images/bb.png");
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+
   border: none;
   border-radius: 5px;
-
 }
 
-.tie{
-  background-image: url('../src/assets/tq.png'); 
-  background-size: cover; 
-  background-position: center; 
-   padding: 2rem;
- 
+.tie {
+  background-image: url("../src/assets/images/tq.png");
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+
   border: none;
   border-radius: 5px;
 }
 
 .piece.hidden-color {
-  background-image: url('../src/assets/n.png'); 
-  background-size: cover; 
-  background-position: center; 
+  background-image: url("../src/assets/images/n.png");
+  background-size: cover;
+  background-position: center;
 }
 .modal-backdrop.show {
   display: none !important;
@@ -286,7 +351,7 @@ body.modal-open {
 }
 
 .info-subtitle {
-  font-size: 1.0rem;
+  font-size: 1rem;
   margin-bottom: 10px;
   color: #333;
 }
@@ -297,7 +362,6 @@ body.modal-open {
   font-style: italic;
   color: #333;
 }
-
 
 .info-list {
   list-style: none;
@@ -319,22 +383,19 @@ body.modal-open {
   margin-right: 8px;
 }
 
-.pause{
+.pause {
   background: #f1baba !important;
 }
 
-.play{
+.play {
   background: #baf1ba !important;
 }
 
-.time-remaining{
+.time-remaining {
   width: max-content;
-
 }
 
-
 @media (max-width: 500px) {
- 
   #timer-container {
     font-size: 1rem;
   }
@@ -343,7 +404,6 @@ body.modal-open {
     font-size: 1rem;
   }
 }
-
 
 .rpg-modal-overlay {
   position: fixed;
@@ -361,29 +421,218 @@ body.modal-open {
   display: none;
 }
 
-
 .rpg-modal-content {
   background: #f7f1e3;
   border-radius: 15px;
   padding: 35px;
   width: 30rem;
   text-align: center;
-  font-family: 'Garamond', serif;
+  font-family: "Garamond", serif;
 
-
-  clip-path: polygon(99% 4%, 99% 8%, 98% 9%, 98% 10%, 99% 11%, 100% 12%, 100% 13%, 100% 16%, 98% 18%, 98% 19%, 99% 20%, 100% 24%, 100% 24%, 93% 29%, 100% 29%, 98% 29%, 96% 29%, 99% 33%, 100% 33%, 100% 33%, 98% 35%, 98% 40%, 98% 41%, 100% 44%, 97% 51%, 98% 52%, 99% 52%, 97% 58%, 94% 59%, 98% 61%, 99% 62%, 99% 63%, 96% 67%, 96% 68%, 97% 71%, 98% 72%, 99% 78%, 99% 79%, 98% 83%, 98% 84%, 98% 84%, 99% 88%, 99% 88%, 99% 89%, 98% 91%, 97% 96%, 98% 97%, 99% 98%, 98% 99%, 95% 100%, 91% 99%, 90% 99%, 87% 99%, 86% 99%, 84% 99%, 82% 99%, 78% 98%, 77% 98%, 74% 99%, 71% 100%, 69% 100%, 66% 100%, 63% 100%, 59% 100%, 54% 98%, 50% 98%, 47% 99%, 44% 100%, 44% 100%, 42% 100%, 40% 100%, 39% 100%, 37% 100%, 34% 97%, 31% 97%, 27% 97%, 26% 98%, 24% 99%, 24% 99%, 20% 99%, 16% 98%, 16% 98%, 16% 98%, 11% 98%, 5% 99%, 5% 99%, 4% 95%, 3% 92%, 4% 90%, 1% 85%, 2% 82%, 2% 79%, 1% 78%, 2% 75%, 1% 71%, 1% 68%, 1% 66%, 1% 64%, 3% 61%, 3% 61%, 3% 59%, 3% 57%, 3% 56%, 3% 51%, 3% 50%, 2% 50%, 4% 44%, 3% 42%, 3% 40%, 3% 38%, 3% 33%, 3% 31%, 2% 29%, 2% 28%, 2% 25%, 2% 23%, 2% 20%, 2% 20%, 2% 16%, 3% 15%, 3% 13%, 2% 10%, 0% 6%, 0% 6%, 1% 4%, 3% 3%, 4% 3%, 9% 3%, 9% 3%, 11% 0%, 15% 3%, 15% 3%, 18% 3%, 19% 2%, 21% 1%, 22% 3%, 28% 3%, 30% 3%, 32% 2%, 32% 2%, 34% 2%, 34% 2%, 37% 3%, 39% 3%, 40% 2%, 40% 1%, 43% 1%, 46% 0%, 48% 1%, 49% 1%, 52% 0%, 53% 0%, 61% 0%, 61% 2%, 62% 3%, 67% 3%, 68% 3%, 68% 1%, 69% 0%, 70% 0%, 71% 0%, 73% 1%, 73% 1%, 74% 2%, 76% 1%, 77% 1%, 79% 0%, 82% 0%, 83% 1%, 84% 2%, 87% 2%, 88% 2%, 90% 0%, 92% 4%, 92% 4%, 94% 1%, 96% 1%, 98% 2%, 98% 2%, 100% 2%, 100% 3%, 100% 4%);
+  clip-path: polygon(
+    99% 4%,
+    99% 8%,
+    98% 9%,
+    98% 10%,
+    99% 11%,
+    100% 12%,
+    100% 13%,
+    100% 16%,
+    98% 18%,
+    98% 19%,
+    99% 20%,
+    100% 24%,
+    100% 24%,
+    93% 29%,
+    100% 29%,
+    98% 29%,
+    96% 29%,
+    99% 33%,
+    100% 33%,
+    100% 33%,
+    98% 35%,
+    98% 40%,
+    98% 41%,
+    100% 44%,
+    97% 51%,
+    98% 52%,
+    99% 52%,
+    97% 58%,
+    94% 59%,
+    98% 61%,
+    99% 62%,
+    99% 63%,
+    96% 67%,
+    96% 68%,
+    97% 71%,
+    98% 72%,
+    99% 78%,
+    99% 79%,
+    98% 83%,
+    98% 84%,
+    98% 84%,
+    99% 88%,
+    99% 88%,
+    99% 89%,
+    98% 91%,
+    97% 96%,
+    98% 97%,
+    99% 98%,
+    98% 99%,
+    95% 100%,
+    91% 99%,
+    90% 99%,
+    87% 99%,
+    86% 99%,
+    84% 99%,
+    82% 99%,
+    78% 98%,
+    77% 98%,
+    74% 99%,
+    71% 100%,
+    69% 100%,
+    66% 100%,
+    63% 100%,
+    59% 100%,
+    54% 98%,
+    50% 98%,
+    47% 99%,
+    44% 100%,
+    44% 100%,
+    42% 100%,
+    40% 100%,
+    39% 100%,
+    37% 100%,
+    34% 97%,
+    31% 97%,
+    27% 97%,
+    26% 98%,
+    24% 99%,
+    24% 99%,
+    20% 99%,
+    16% 98%,
+    16% 98%,
+    16% 98%,
+    11% 98%,
+    5% 99%,
+    5% 99%,
+    4% 95%,
+    3% 92%,
+    4% 90%,
+    1% 85%,
+    2% 82%,
+    2% 79%,
+    1% 78%,
+    2% 75%,
+    1% 71%,
+    1% 68%,
+    1% 66%,
+    1% 64%,
+    3% 61%,
+    3% 61%,
+    3% 59%,
+    3% 57%,
+    3% 56%,
+    3% 51%,
+    3% 50%,
+    2% 50%,
+    4% 44%,
+    3% 42%,
+    3% 40%,
+    3% 38%,
+    3% 33%,
+    3% 31%,
+    2% 29%,
+    2% 28%,
+    2% 25%,
+    2% 23%,
+    2% 20%,
+    2% 20%,
+    2% 16%,
+    3% 15%,
+    3% 13%,
+    2% 10%,
+    0% 6%,
+    0% 6%,
+    1% 4%,
+    3% 3%,
+    4% 3%,
+    9% 3%,
+    9% 3%,
+    11% 0%,
+    15% 3%,
+    15% 3%,
+    18% 3%,
+    19% 2%,
+    21% 1%,
+    22% 3%,
+    28% 3%,
+    30% 3%,
+    32% 2%,
+    32% 2%,
+    34% 2%,
+    34% 2%,
+    37% 3%,
+    39% 3%,
+    40% 2%,
+    40% 1%,
+    43% 1%,
+    46% 0%,
+    48% 1%,
+    49% 1%,
+    52% 0%,
+    53% 0%,
+    61% 0%,
+    61% 2%,
+    62% 3%,
+    67% 3%,
+    68% 3%,
+    68% 1%,
+    69% 0%,
+    70% 0%,
+    71% 0%,
+    73% 1%,
+    73% 1%,
+    74% 2%,
+    76% 1%,
+    77% 1%,
+    79% 0%,
+    82% 0%,
+    83% 1%,
+    84% 2%,
+    87% 2%,
+    88% 2%,
+    90% 0%,
+    92% 4%,
+    92% 4%,
+    94% 1%,
+    96% 1%,
+    98% 2%,
+    98% 2%,
+    100% 2%,
+    100% 3%,
+    100% 4%
+  );
   box-shadow: #333 2px 3px 5px, #8f512259 0 0 35px inset;
 }
 
+.rpg-modal-taverna {
+  width: min-content;
+}
 
 .rpg-modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
   font-size: 2.1em;
   color: #6c3f2e;
   margin-bottom: 15px;
   font-weight: bold;
 }
 
-#rpgInfoMessage{
+#rpgInfoMessage {
   font-size: 1.2em;
 }
 
@@ -397,7 +646,7 @@ body.modal-open {
   width: 90%;
   padding: 8px;
   margin: 10px 0;
-  font-family: 'Garamond', serif;
+  font-family: "Garamond", serif;
   border-radius: 10px;
 }
 
@@ -409,7 +658,7 @@ body.modal-open {
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Garamond', serif;
+  font-family: "Garamond", serif;
   width: 40%;
 }
 
@@ -425,17 +674,16 @@ body.modal-open {
   background-color: #8b5e34;
 }
 
-
 #modalRPGInfo {
-  transform: rotateX(15deg); 
-  transform-style: preserve-3d; 
-  transition: transform 0.3s ease; 
+  transform: rotateX(15deg);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
 }
 
 .timer-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px;
   background-color: #f8f9fa;
   border-radius: 8px 8px 0px 0px;
@@ -444,7 +692,7 @@ body.modal-open {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
   position: relative;
-  flex-direction: column
+  flex-direction: column;
 }
 
 .dropdown {
@@ -458,11 +706,11 @@ body.modal-open {
 }
 
 .image-container img {
-  width: auto;
+  width: 55px;
   height: 100%;
 }
 
-.icone-img{
+.icone-img {
   width: 40px;
   margin-right: 10px;
 }
@@ -533,7 +781,6 @@ body.modal-open {
   background-color: #e9ecef;
 }
 
-
 .show {
   display: block;
 }
@@ -543,10 +790,8 @@ body.modal-open {
   padding-right: 20px;
 }
 
-
-
 #loading-screen {
-  position: fixed; 
+  position: fixed;
   width: 100%;
   height: 100%;
   display: flex;
@@ -554,10 +799,9 @@ body.modal-open {
   align-items: center;
   background-color: black;
   color: #f4e5c4;
-  font-family: 'Papyrus', fantasy;
+  font-family: "Papyrus", fantasy;
   z-index: 9999;
 }
-
 
 .rpg-container {
   display: flex;
@@ -566,19 +810,16 @@ body.modal-open {
   text-align: center;
 }
 
-
 .pergaminho-img {
   max-width: 300px;
   width: 80%;
   margin-bottom: 20px;
 }
 
-
 .loading-text {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
-
 
 .progress-bar {
   width: 80%;
@@ -599,10 +840,13 @@ body.modal-open {
 }
 
 @keyframes loading {
-  0% { width: 0%; }
-  100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
-
 
 @keyframes moveCharacter {
   0% {
@@ -656,13 +900,11 @@ body.modal-open {
   margin-top: 20px;
 }
 
-
 .list-group-item:hover {
   background-color: #21a1f173;
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-
 
 .btn-rpg {
   width: auto;
@@ -670,7 +912,7 @@ body.modal-open {
   background-color: #4b1902b7;
   font-size: 1.2rem;
   font-weight: bold;
-  border: 2px solid #DAA520;
+  border: 2px solid #daa520;
   border-radius: 10px;
   text-align: center;
   display: inline-flex;
@@ -690,7 +932,6 @@ body.modal-open {
   margin-right: 8px;
 }
 
-
 .loading-modal {
   text-align: center;
   margin-bottom: 10px;
@@ -707,11 +948,16 @@ body.modal-open {
 }
 
 .loading-bar::before {
-  content: '';
+  content: "";
   display: block;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.2); /* Cor da animação de carregamento */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Cor da animação de carregamento */
   position: absolute;
   animation: loadingAnimation 1.5s linear infinite; /* Animação */
 }
@@ -726,13 +972,12 @@ body.modal-open {
 }
 
 .loading-modal p {
-  font-family: 'Fantasy', cursive; /* Fonte do texto */
+  font-family: "Fantasy", cursive; /* Fonte do texto */
   font-size: 1.2em;
   color: #ffffff; /* Cor do texto */
 }
 
-
-.loading-div{
+.loading-div {
   height: 30px;
 }
 
@@ -743,13 +988,13 @@ body.modal-open {
 }
 
 #userListButton::before {
-  content: ''; /* Necessário para criar o pseudo-elemento */
+  content: ""; /* Necessário para criar o pseudo-elemento */
   position: absolute; /* Posiciona o pseudo-elemento em relação ao pai */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../src/assets/taverna.png'); /* Imagem de fundo */
+  background-image: url("../src/assets/images/taverna.png"); /* Imagem de fundo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -761,23 +1006,24 @@ body.modal-open {
   z-index: 1; /* Garante que o conteúdo esteja acima da imagem */
 }
 
-
 .taverna-loading-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 .taverna-loading-content {
+  border-radius: 100px;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.8);
   text-align: center;
   color: #f4e1c1;
-  font-family: 'MedievalSharp', sans-serif;
+  font-family: "MedievalSharp", sans-serif;
 }
 .taverna-cerveja {
   width: 120px;
@@ -807,10 +1053,58 @@ body.modal-open {
 
 /* Animações */
 @keyframes pergaminho-fade {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 @keyframes progress-loading {
-  0% { width: 0%; }
-  100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Limita a altura do texto com overflow para exibir apenas algumas linhas */
+.piece-description {
+  max-height: 46px; /* Mostra cerca de duas linhas */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: max-height 0.5s ease;
+}
+
+/* Classe para expandir o texto completo */
+.piece-description.expanded {
+  max-height: 500px; /* Altura suficiente para mostrar o texto completo */
+}
+
+/* Estilos para os títulos das peças */
+.piece-title {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* Botão Ler Mais */
+.button-text {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  font-size: 14px;
+  padding: 0;
+}
+
+.info-description {
+  padding-right: 15px;
+}
+
+.container-buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  margin: 20px auto;
 }
