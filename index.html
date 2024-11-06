@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <!-- Metadados Essenciais -->
     <meta charset="UTF-8" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta content="BoardToim | TONI" property="og:site_name" />
-    <meta content="src/assets/cerveja.png" property="og:image" />
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BoardToim</title>
+    <meta
+      name="description"
+      content="BoardToim - Um jogo de tabuleiro épico!"
+    />
+    <meta name="author" content="Antonio Mota" />
 
+    <!-- Metadados para Compartilhamento -->
+    <meta property="og:site_name" content="BoardToim | TONI" />
+    <meta property="og:title" content="BoardToim - Batalhas Lendárias" />
+    <meta
+      property="og:description"
+      content="Prepare-se para uma batalha épica com guerreiros, magos, morte e dragões."
+    />
+    <meta property="og:image" content="src/assets/images/cerveja.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- Controle de Cache -->
+    <meta
+      http-equiv="cache-control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <!-- Título e Ícone da Página -->
+    <title>BoardToim</title>
+    <link rel="icon" href="src/assets/cerveja.ico" type="image/x-icon" />
+
+    <!-- CSS Externo -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,17 +42,37 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/peerjs@1.5.0/dist/peerjs.min.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
+
+    <!-- JavaScript Externo -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/peerjs@1.5.0/dist/peerjs.min.js"></script>
   </head>
+
   <body>
+    <!-- Loading da Taverna -->
+    <div class="taverna-loading-overlay" id="tavernaLoading">
+      <div class="taverna-loading-content">
+        <img
+          src="src/assets/images/cerveja.png"
+          alt="cervejinha"
+          class="taverna-cerveja"
+        />
+        <p class="taverna-loading-text" id="tavernaLoadingText">
+          Aguarde, estamos enchendo as canecas...
+        </p>
+        <div class="taverna-progress-bar">
+          <div class="taverna-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
     <div id="loading-screen">
       <div class="rpg-container">
         <img
-          src="src/assets/pergaminho.png"
+          src="src/assets/images/pergaminho.png"
           alt="Pergaminho"
           class="pergaminho-img"
         />
@@ -45,14 +86,22 @@
         <!-- Animação das peças abaixo da barra de loading -->
         <div class="characters-container">
           <img
-            src="src/assets/c.png"
+            src="src/assets/images/c.png"
             alt="Guerreiro"
             class="character-animation"
           />
-          <img src="src/assets/m.png" alt="Mago" class="character-animation" />
-          <img src="src/assets/f.png" alt="Morte" class="character-animation" />
           <img
-            src="src/assets/d.png"
+            src="src/assets/images/m.png"
+            alt="Mago"
+            class="character-animation"
+          />
+          <img
+            src="src/assets/images/f.png"
+            alt="Morte"
+            class="character-animation"
+          />
+          <img
+            src="src/assets/images/d.png"
             alt="Dragão"
             class="character-animation"
           />
@@ -62,52 +111,37 @@
 
     <div class="container" id="container">
       <div class="input-container">
-        <div class="input-group mt-4">
-          <input
-            type="text"
-            id="game-id"
-            class="form-control"
-            value=""
-            disabled
-            aria-label="ID do Jogo"
-          />
-          <button
-            class="btn btn-outline-secondary width-button"
-            id="copyButton"
-            data-bs-toggle="tooltip"
-            title="Copiado!"
-          >
-            Copiar
-          </button>
-        </div>
-
-        <div class="input-group margin-button">
-          <input
-            type="text"
-            id="peer-id-input"
-            class="form-control"
-            placeholder="Insira o ID do Adversário"
-            aria-label="Nome do Jogador"
-          />
-          <button class="btn btn-primary width-button" onclick="clickGame()">
-            Jogar
-          </button>
-        </div>
-
-        <!-- Loading da Taverna -->
-        <div class="taverna-loading-overlay" id="tavernaLoading">
-          <div class="taverna-loading-content">
-            <img
-              src="src/assets/cerveja.png"
-              alt="cervejinha"
-              class="taverna-cerveja"
+        <div class="oculto">
+          <div class="input-group mt-4">
+            <input
+              type="text"
+              id="game-id"
+              class="form-control"
+              value=""
+              disabled
+              aria-label="ID do Jogo"
             />
-            <p class="taverna-loading-text">
-              Aguarde, estamos enchendo as canecas...
-            </p>
-            <div class="taverna-progress-bar">
-              <div class="taverna-progress-fill"></div>
-            </div>
+            <button
+              class="btn btn-outline-secondary width-button"
+              id="copyButton"
+              data-bs-toggle="tooltip"
+              title="Copiado!"
+            >
+              Copiar
+            </button>
+          </div>
+
+          <div class="input-group margin-button">
+            <input
+              type="text"
+              id="peer-id-input"
+              class="form-control"
+              placeholder="Insira o ID do Adversário"
+              aria-label="Nome do Jogador"
+            />
+            <button class="btn btn-primary width-button" onclick="clickGame()">
+              Jogar
+            </button>
           </div>
         </div>
 
@@ -115,7 +149,7 @@
         <div class="container mt-4">
           <a href="#" class="btn btn-rpg width-button" id="userListButton">
             <img
-              src="src/assets/cerveja.png"
+              src="src/assets/images/cerveja.png"
               alt="Taverna"
               class="taverna-icon"
             />
@@ -130,38 +164,186 @@
           Cada jogador comanda um exército de peças lendárias, cada uma com
           habilidades especiais e destemidas. Prepare-se para uma batalha épica:
         </h5>
+
+        <!-- Lista de peças com descrições limitadas -->
         <ul class="info-list">
           <li>
-            <span class="pieces-index orange"></span> **Guerreiros (4 peças)**:
-            Esses bravos lutadores são durões, sempre prontos para esmagar
-            qualquer outro Guerreiro que entre em seu caminho... e até encarar o
-            temível Dragão!
+            <div class="info-img">
+              <span class="pieces-index orange"></span>
+            </div>
+            <div class="info-text">
+              <h6 class="piece-title">
+                Guerreiro (O Aniquilador de Dragões) - 3 peças
+              </h6>
+              <div class="info-description">
+                <div class="piece-description" id="description-guerreiros">
+                  Esses heróis de músculos e espadas enfrentam dragões sem
+                  piscar e não hesitam em derrubar outros guerreiros em batalha.
+                  Mas, se ousarem atacar uma Bruxa ou um Mago, suas armaduras se
+                  desfazem, e eles viram poeira. E isso não é tudo – ao atacar a
+                  própria Morte, ela os ceifa e leva suas almas consigo. Sua
+                  defesa pode não ser das melhores, mas ninguém pode negar a
+                  coragem do estilo “vou, mas caio lutando”, algo digno de
+                  admiração.
+                </div>
+                <button
+                  class="button-text"
+                  onclick="togglePiece('description-guerreiros', this)"
+                >
+                  Ler Mais
+                </button>
+              </div>
+            </div>
           </li>
+
           <li>
-            <span class="pieces-index purple"></span> **Magos (2 peças)**:
-            Mestres das artes místicas, os Magos são ardilosos! Com seus
-            feitiços, eles podem desintegrar outros Magos ou até acabar com os
-            orgulhosos Guerreiros. Mas cuidado: eles são poderosos, mas não
-            invencíveis!
+            <div class="info-img">
+              <span class="pieces-index green"></span>
+            </div>
+            <div class="info-text">
+              <h6 class="piece-title">
+                Bruxa (A Reveladora de Segredos) - 2 peças
+              </h6>
+              <div class="info-description">
+                <div class="piece-description" id="description-bruxas">
+                  As Bruxas são o verdadeiro pesadelo para peças furtivas!
+                  Quando atacam, só conseguem derrotar guerreiros. Mas isso é
+                  apenas o começo: se duas Bruxas se enfrentam, o encontro se
+                  transforma em um espetáculo sobrenatural – ambas desaparecem
+                  numa explosão mágica digna de fogos de artifício. Além disso,
+                  todos os adversários escondidos, como a Morte e o Dragão, são
+                  revelados, mostrando suas verdadeiras formas, o que pode ser
+                  devastador! Apesar de poderosas, não são invencíveis (quem é,
+                  afinal?), então, se um Mago, a Morte, um Dragão ou outra Bruxa
+                  resolve atacá-las, é o fim da linha.
+                </div>
+                <button
+                  class="button-text"
+                  onclick="togglePiece('description-bruxas', this)"
+                >
+                  Ler Mais
+                </button>
+              </div>
+            </div>
           </li>
+
           <li>
-            <span class="pieces-index red"></span> **Morte (2 peças)**:
-            Implacável e sinistra, a Morte não faz distinção. Derrota qualquer
-            um que ousar desafiá-la... só que paga o preço final e vai junto!
-            Escolha bem quando libertar esse poder sombrio.
+            <div class="info-img">
+              <span class="pieces-index purple"></span>
+            </div>
+            <div class="info-text">
+              <h6 class="piece-title">
+                Mago (O Autêntico Feiticeiro do Campo) - 2 peças
+              </h6>
+              <div class="info-description">
+                <div class="piece-description" id="description-magos">
+                  Magos são os estrategistas do campo de batalha, mandando
+                  Guerreiros e Bruxas pelos ares sem esforço. Mas, quando dois
+                  Magos se enfrentam, a disputa vira um duelo épico onde o
+                  primeiro a conjurar magia leva a vitória! Só que há um
+                  problema: se um Dragão entra na brincadeira, o Mago vira
+                  churrasco rapidinho, eles são imunes as suas magias (olha que
+                  ousadia). E embora não sejam exatamente frágeis, não é como se
+                  eles fossem feitos de armadura de ferro! Qualquer outro Mago
+                  ou um Dragão que decida encará-los de frente... bom, é tchau
+                  para nossos ilustres conjuradores.
+                </div>
+                <button
+                  class="button-text"
+                  onclick="togglePiece('description-magos', this)"
+                >
+                  Ler Mais
+                </button>
+              </div>
+            </div>
           </li>
+
           <li>
-            <span class="pieces-index white"></span> **Dragão (1 peça)**: A fera
-            suprema, temida por todos no campo de batalha! O Dragão incinera
-            qualquer peça que cruze seu caminho, mas até ele deve temer a
-            presença da Morte. Use-o com sabedoria e terror!
+            <div class="info-img">
+              <span class="pieces-index red"></span>
+            </div>
+            <div class="info-text">
+              <h6 class="piece-title">
+                Morte (O Cortejo Silencioso) - 2 peças
+              </h6>
+              <div class="info-description">
+                <div class="piece-description" id="description-morte">
+                  Mortes não brincam. Elas são metódicas e letais (como o nome
+                  bem indica). Bruxas? Eliminadas. Guerreiros? Magos? Também.
+                  Mas, contra um Dragão... bom, às vezes até a Morte sabe que é
+                  melhor esperar. Ao ceifar qualquer peça que não seja uma
+                  Bruxa, elas se despedem do campo de batalha com suas almas
+                  ceifadas. Porém, se uma Bruxa ousar atacar, a Morte apenas se
+                  revela e permanece em batalha, lançando um sorriso sinistro –
+                  como se dissesse: “Vai encarar?”
+                </div>
+                <button
+                  class="button-text"
+                  onclick="togglePiece('description-morte', this)"
+                >
+                  Ler Mais
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="info-img">
+              <span class="pieces-index white"></span>
+            </div>
+            <div class="info-text">
+              <h6 class="piece-title">*Dragão (O Terror Alado) - 1 peça</h6>
+              <div class="info-description">
+                <div class="piece-description" id="description-dragao">
+                  O Dragão é o que mais se aproxima de uma força imparável neste
+                  jogo! Ele destroça Guerreiros, frita Magos, desintegra Bruxas
+                  e até faz a Morte pensar duas vezes. Mas cuidado: se topar com
+                  outro Dragão, teremos um espetáculo de fogo e fúria, onde
+                  ambos se reduzem a cinzas em um épico empate destrutivo. Imune
+                  a magias e praticamente invulnerável, o Dragão tem apenas um
+                  verdadeiro ponto fraco: Guerreiros audaciosos que, com
+                  astúcia, conseguem surpreendê-lo. Mas fora isso, ele reina
+                  absoluto!
+                </div>
+                <button
+                  class="button-text"
+                  onclick="togglePiece('description-dragao', this)"
+                >
+                  Ler Mais
+                </button>
+              </div>
+            </div>
           </li>
         </ul>
+
         <p class="info-paragraph">
           ⚔️ **Aviso de Guerra**: Quando a batalha termina e um jogador
-          conquista a vitória, o jogo começa novamente, mas o caos do destino
-          move todas as peças. Cada nova batalha traz surpresas!
+          conquista a vitória, o jogo recomeça, mas o caos do destino
+          redistribui todas as peças. Cada nova batalha reserva surpresas!
         </p>
+      </div>
+      <div class="container-buttons mt-4">
+        <a
+          href="https://github.com/tonicjunior/BoardToim"
+          class="btn btn-outline-dark"
+          target="_blank"
+        >
+          <img
+            src="src/assets/images/git.png"
+            alt="GitHub"
+            class="icon"
+            style="width: 24px; margin-right: 8px"
+          />
+          <span>Repositório Git</span>
+        </a>
+
+        <a
+          href="https://nubank.com.br/cobrar/3upen/672bafe3-8951-4aae-8e53-d86628e67a1a"
+          class="btn btn-outline-primary"
+          target="_blank"
+        >
+          <span>❤️ Doações </span>
+        </a>
       </div>
     </div>
 
@@ -178,7 +360,7 @@
         <div class="dropdown">
           <div class="image-container">
             <img
-              src="src/assets/pergaminho.png"
+              src="src/assets/images/pergaminho.png"
               onclick="toggleDropdown()"
               class="dropbtn"
               alt="Opções"
@@ -188,23 +370,23 @@
             <div class="dropdown-item">
               <a href="#" id="tie-option" onclick="tie()">
                 <img
-                  src="src/assets/tq.png"
+                  src="src/assets/images/tq.png"
                   class="icone-img"
                   alt="empatar"
                 />Empatar</a
               >
-              <span id="tie-timer" style="margin-left: 10px"></span>
+              <span id="tie-timer"></span>
             </div>
             <a href="#" onclick="surrender()">
               <img
-                src="src/assets/bb.png"
+                src="src/assets/images/bb.png"
                 class="icone-img"
                 alt="render"
               />Render</a
             >
             <a href="#" onclick="exit()">
               <img
-                src="src/assets/exit.png"
+                src="src/assets/images/exit.png"
                 class="icone-img"
                 alt="sair"
               />Sair</a
@@ -253,7 +435,7 @@
     <!-- Modal da Lista de Jogadores -->
     <div id="modalUserList" class="rpg-modal-overlay hide">
       <div class="rpg-modal-content">
-        <h3 class="rpg-modal-title">⚔️ Usuários Online</h3>
+        <h3 class="rpg-modal-title">⚔️ Aventureiros Disponíveis</h3>
         <div class="loading-div">
           <div id="loadingModal" class="loading-modal hide">
             <div class="loading-bar"></div>
@@ -269,38 +451,30 @@
     </div>
 
     <script>
-    
+      function togglePiece(descriptionId, button) {
+        const description = document.getElementById(descriptionId);
+        description.classList.toggle("expanded");
+        button.innerText = description.classList.contains("expanded")
+          ? "Ler Menos"
+          : "Ler Mais";
+      }
+
       function toggleDropdown() {
         document.getElementById("dropdown-menu").classList.toggle("show");
       }
 
-      window.onclick = function (event) {
-        if (!event.target.matches(".dropbtn")) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
+      window.addEventListener("click", (event) => {
+        const target = event.target;
+        const isDropdownButton = target.matches(".dropbtn");
+        const dropdowns = document.querySelectorAll(".dropdown-content");
+
+        if (!isDropdownButton) {
+          dropdowns.forEach((dropdown) => {
+            if (dropdown.classList.contains("show")) {
+              dropdown.classList.remove("show");
             }
-          }
-        }
-      };
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const copyButton = document.getElementById("copyButton");
-        const tooltip = new bootstrap.Tooltip(copyButton, {
-          trigger: "manual",
-          placement: "top",
-          container: "html",
-        });
-
-        copyButton.addEventListener("click", () => {
-          const gameId = document.getElementById("game-id").value;
-          navigator.clipboard.writeText(gameId).then(() => {
-            tooltip.show();
-            setTimeout(() => tooltip.hide(), 1500);
           });
-        });
+        }
       });
     </script>
 
