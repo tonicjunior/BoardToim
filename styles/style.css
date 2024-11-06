@@ -1080,7 +1080,7 @@ body.modal-open {
 
 /* Classe para expandir o texto completo */
 .piece-description.expanded {
-  max-height: 500px; /* Altura suficiente para mostrar o texto completo */
+  max-height: 1517px; /* Altura suficiente para mostrar o texto completo */
 }
 
 /* Estilos para os títulos das peças */
