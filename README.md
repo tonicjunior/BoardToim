@@ -7,6 +7,12 @@
 
 👉 [Clique aqui para jogar!](https://tonicjunior.github.io/BoardToim/)
 
+## 📂 Links do Projeto
+
+- [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/tonicjunior/BoardToim) 
+- ❤️ [Investir no projeto](https://nubank.com.br/cobrar/3upen/672bafe3-8951-4aae-8e53-d86628e67a1a)
+
+
 ## Índice
 
 - [Funcionalidades](#funcionalidades)
@@ -21,7 +27,7 @@
 - **Multiplayer Peer-to-Peer**: Conexão entre dois jogadores usando IDs de sessão gerados via PeerJS.
 - **Interface Responsiva**: Layout adaptável para dispositivos móveis e desktops, utilizando Bootstrap.
 - **Regras Customizáveis**: Cada peça possui um conjunto específico de regras para movimentação e ataque.
-- **Timer de Turno**: Limite de 10 segundos para cada jogador realizar uma ação, destacando a vez ativa.
+- **Timer de Turno**: Limite de 15 segundos para cada jogador realizar uma ação, destacando a vez ativa.
 - **Modal Interativo**: Modal de confirmação e exibição de informações de jogo.
 - **Cores Dinâmicas das Peças**: Peças coloridas com atributos específicos que são sorteados a cada nova partida.
 
@@ -29,7 +35,7 @@
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/seuusuario/BoardToim.git
+   git clone https://github.com/tonicjunior/BoardToim.git
    cd BoardToim
    ```
 
@@ -42,29 +48,41 @@
 
 Cada jogador comanda um exército de peças lendárias, cada uma com habilidades especiais e destemidas. Prepare-se para uma batalha épica:
 
-- <img src="src/assets/c.png" width="44" alt="Guerreiro"> **Guerreiros (4 peças)**: Esses bravos lutadores são durões, sempre prontos para esmagar qualquer outro Guerreiro que entre em seu caminho... e até encarar o temível Dragão!
+- <img src="src/assets/images/c.png" width="44" alt="Guerreiro"> **Guerreiro (O Aniquilador de Dragões) - 3 peças**  
+  Esses heróis de músculos e espadas enfrentam dragões sem piscar e não hesitam em derrubar outros guerreiros em batalha. Mas, se ousarem atacar uma Bruxa ou um Mago, suas armaduras se desfazem, e eles viram poeira. E isso não é tudo – ao atacar a própria Morte, ela os ceifa e leva suas almas consigo. Sua defesa pode não ser das melhores, mas ninguém pode negar a coragem do estilo “vou, mas caio lutando”, algo digno de admiração.
 
-- <img src="src/assets/m.png" width="44" alt="Mago"> **Magos (2 peças)**: Mestres das artes místicas, os Magos são ardilosos! Com seus feitiços, eles podem desintegrar outros Magos ou até acabar com os orgulhosos Guerreiros. Mas cuidado: eles são poderosos, mas não invencíveis!
+- <img src="src/assets/images/w.png" width="44" alt="bruxa"> **Bruxa (A Reveladora de Segredos) - 2 peças**  
+  As Bruxas são o verdadeiro pesadelo para peças furtivas! Quando atacam, só conseguem derrotar guerreiros. Mas isso é apenas o começo: se duas Bruxas se enfrentam, o encontro se transforma em um espetáculo sobrenatural – ambas desaparecem numa explosão mágica digna de fogos de artifício. Além disso, todos os adversários escondidos, como a Morte e o Dragão, são revelados, mostrando suas verdadeiras formas, o que pode ser devastador! Apesar de poderosas, não são invencíveis (quem é, afinal?), então, se um Mago, a Morte, um Dragão ou outra Bruxa resolve atacá-las, é o fim da linha.
 
-- <img src="src/assets/f.png" width="44" alt="Morte"> **Morte (2 peças)**: Implacável e sinistra, a Morte não faz distinção. Derrota qualquer um que ousar desafiá-la... só que paga o preço final e vai junto! Escolha bem quando libertar esse poder sombrio.
+- <img src="src/assets/images/m.png" width="44" alt="mago"> **Mago (O Autêntico Feiticeiro do Campo) - 2 peças**  
+  Magos são os estrategistas do campo de batalha, mandando Guerreiros e Bruxas pelos ares sem esforço. Mas, quando dois Magos se enfrentam, a disputa vira um duelo épico onde o primeiro a conjurar magia leva a vitória! Só que há um problema: se um Dragão entra na brincadeira, o Mago vira churrasco rapidinho, eles são imunes as suas magias (olha que ousadia). E embora não sejam exatamente frágeis, não é como se eles fossem feitos de armadura de ferro! Qualquer outro Mago ou um Dragão que decida encará-los de frente... bom, é tchau para nossos ilustres conjuradores.
 
-- <img src="src/assets/d.png" width="44" alt="Dragão"> **Dragão (1 peça)**: A fera suprema, temida por todos no campo de batalha! O Dragão incinera qualquer peça que cruze seu caminho, mas até ele deve temer a presença da Morte. Use-o com sabedoria e terror!
+- <img src="src/assets/images/f.png" width="44" alt="morte"> **Morte (O Cortejo Silencioso) - 2 peças**  
+  Mortes não brincam. Elas são metódicas e letais (como o nome bem indica). Bruxas? Eliminadas. Guerreiros? Magos? Também. Mas, contra um Dragão... bom, às vezes até a Morte sabe que é melhor esperar. Ao ceifar qualquer peça que não seja uma Bruxa, elas se despedem do campo de batalha com suas almas ceifadas. Porém, se uma Bruxa ousar atacar, a Morte apenas se revela e permanece em batalha, lançando um sorriso sinistro – como se dissesse: “Vai encarar?”
+
+- <img src="src/assets/images/d.png" width="44" alt="dragao"> **Dragão (O Terror Alado) - 1 peça**  
+  O Dragão é o que mais se aproxima de uma força imparável neste jogo! Ele destroça Guerreiros, frita Magos, desintegra Bruxas e até faz a Morte pensar duas vezes. Mas cuidado: se topar com outro Dragão, teremos um espetáculo de fogo e fúria, onde ambos se reduzem a cinzas em um épico empate destrutivo. Imune a magias e praticamente invulnerável, o Dragão tem apenas um verdadeiro ponto fraco: Guerreiros audaciosos que, com astúcia, conseguem surpreendê-lo. Mas fora isso, ele reina absoluto!
 
 ---
 
-⚔️ **Aviso de Guerra**: Quando a batalha termina e um jogador conquista a vitória, o jogo começa novamente, mas o caos do destino move todas as peças. Cada nova batalha traz surpresas!
-
+⚔️ **Aviso de Guerra**: Quando a batalha termina e um jogador conquista a vitória, o jogo recomeça, mas o caos do destino redistribui todas as peças. Cada nova batalha reserva surpresas!
 
 ## Estrutura do Projeto
 
+- **index.html**: Interface principal do jogo.
+- **styles.css**: Estilos CSS personalizados.
+- **app.js**: Lógica do jogo e controle de fluxo.
+
 ```plaintext
 BoardToim/
-├── index.html          # Estrutura principal da aplicação
+├── index.html              # Estrutura principal da aplicação
 ├── src/
-│   ├── app.js          # Lógica do jogo e manipulação de eventos
+│    └──  assets
+│        └──  images        # Pasta com as imagens do jogo
+│   ├── app.js              # Lógica do jogo e manipulação de eventos
 ├── styles/
-│   └── style.css       # Estilos customizados para o jogo
-└── README.md           # Documentação do projeto
+│   └── style.css           # Estilos customizados para o jogo
+└── README.md               # Documentação do projeto
 ```
 
 ## Tecnologias Usadas
@@ -77,4 +95,8 @@ BoardToim/
 
 ## Licença
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+Este projeto está licenciado sob a licença MIT. Sinta-se à vontade para modificá-lo e compartilhá-lo.
+
+---
+
+👾 Divirta-se jogando **BoardToim** e prepare-se para uma batalha épica!
