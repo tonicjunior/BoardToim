@@ -10,8 +10,12 @@
 
 ## 📂 Links do Projeto
 
-   [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/tonicjunior/BoardToim) 
-   [![Investir](https://img.shields.io/badge/Investir%20no%20projeto-Informa%C3%A7%C3%B5es-4CAF50)](https://nubank.com.br/cobrar/3upen/672bafe3-8951-4aae-8e53-d86628e67a1a) 
+   <a href="https://github.com/tonicjunior/BoardToim" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?logo=github" alt="GitHub">
+</a>
+<a href="https://nubank.com.br/cobrar/3upen/672bafe3-8951-4aae-8e53-d86628e67a1a" target="_blank">
+    <img src="https://img.shields.io/badge/Investir%20no%20projeto-Informa%C3%A7%C3%B5es-4CAF50" alt="Investir">
+</a>
 
 ## Índice
 
