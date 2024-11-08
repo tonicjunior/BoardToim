@@ -119,6 +119,10 @@
     <div class="container" id="container">
       <div class="input-container">
         <div class="oculto">
+          <audio id="audioPlayer" controls>
+            <source src="" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+          </audio>
           <div class="input-group mt-4">
             <input
               type="text"
@@ -397,6 +401,13 @@
                 class="icone-img"
                 alt="sair"
               />Sair</a
+            >
+            <a href="#" onclick="music()" >
+              <img
+                src="src/assets/images/music.png"
+                class="icone-img"
+                alt="music"
+              /><span id="musicText">Pausar</span> Música</a
             >
           </div>
         </div>
