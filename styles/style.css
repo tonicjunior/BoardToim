@@ -1114,22 +1114,30 @@ body.modal-open {
 }
 
 
-.playButton{
+.pergaminho-info{
+  width: 20px;
+}
+
+.playButton {
+  position: relative; 
   display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
 }
 
 .play-pause-btn {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  width: min-content;
-
+  position: absolute;
+  top: 0;
+  right: -6px;
   background: transparent;
   border: none;
   font-size: 1.5em;
+  margin-top: -8px;
+  width: 40px;
 }
 
 
-.pergaminho-info{
-  width: 20px;
+.img-pb {
+  filter: grayscale(100%);
 }
