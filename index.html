@@ -120,7 +120,7 @@
       <div class="input-container">
         <div class="oculto">
           <audio id="audioPlayer" controls>
-            <source src="" type="audio/mp3">
+            <source src="" type="audio/mp3" />
             Seu navegador não suporta o elemento de áudio.
           </audio>
           <div class="input-group mt-4">
@@ -161,16 +161,26 @@
           <a href="#" class="btn btn-rpg width-button" id="userListButton">
             <img
               src="src/assets/images/cerveja.png"
-              alt="Taverna"
+              alt="Taberna"
               class="taverna-icon"
             />
-            <span> Taverna Caldeirão Furado </span>
+            <span> Taberna Caldeirão Furado </span>
           </a>
         </div>
       </div>
 
       <div class="info-container">
-        <h4 class="info-title">🏰 Regras do Jogo</h4>
+        <p class="info-paragraph">
+          Para iniciar uma partida basta encontrar outro aventureiro na taberna!
+        </p>
+        <h4 class="info-title">
+          <img
+            src="src/assets/images/pergaminho.png"
+            class="pergaminho-info"
+            alt="pergaminho"
+          />
+          Regras do Jogo
+        </h4>
         <h5 class="info-subtitle">
           Cada jogador comanda um exército de peças lendárias, cada uma com
           habilidades especiais e destemidas. Prepare-se para uma batalha épica:
@@ -353,12 +363,12 @@
           class="btn btn-outline-primary"
           target="_blank"
         >
-        <img
-        src="src/assets/images/love.png"
-        alt="Doar"
-        class="icon"
-        style="width: 24px; margin-right: 8px"
-      />
+          <img
+            src="src/assets/images/love.png"
+            alt="Doar"
+            class="icon"
+            style="width: 24px; margin-right: 8px"
+          />
           <span>Investir no projeto </span>
         </a>
       </div>
@@ -408,7 +418,7 @@
                 alt="sair"
               />Sair</a
             >
-            <a href="#" onclick="music()" >
+            <a href="#" onclick="music()">
               <img
                 src="src/assets/images/music.png"
                 class="icone-img"
@@ -448,7 +458,7 @@
           type="text"
           id="rpgPlayerNick"
           class="rpg-modal-input"
-          placeholder="Ex: NarutoUzocrack"
+          placeholder="Ex: SnapeDaSilva"
         />
         <button class="rpg-modal-btn" onclick="saveNickname()">
           Confirmar
@@ -459,7 +469,15 @@
     <!-- Modal da Lista de Jogadores -->
     <div id="modalUserList" class="rpg-modal-overlay hide">
       <div class="rpg-modal-content">
-        <h3 class="rpg-modal-title">⚔️ Aventureiros Disponíveis</h3>
+        <div class="playButton">
+          <h3 class="rpg-modal-title">⚔️ Aventureiros Disponíveis</h3>
+
+          <!-- Botão de Play/Pause para a música -->
+          <button id="playPauseButton" class="play-pause-btn" onclick="music()">
+            🔊
+          </button>
+        </div>
+
         <div class="loading-div">
           <div id="loadingModal" class="loading-modal hide">
             <div class="loading-bar"></div>
