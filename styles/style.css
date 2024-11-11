@@ -347,7 +347,7 @@ body.modal-open {
   display: flex;
   align-items: center;
   gap: 10px;
-  
+
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
@@ -1113,31 +1113,35 @@ body.modal-open {
   margin: 20px auto;
 }
 
-
-.pergaminho-info{
+.pergaminho-info {
   width: 20px;
 }
 
 .playButton {
-  position: relative; 
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   width: 100%;
 }
 
 .play-pause-btn {
   position: absolute;
   top: 0;
-  right: -6px;
+  right: -5px;
   background: transparent;
   border: none;
   font-size: 1.5em;
   margin-top: -8px;
-  width: 40px;
+  width: 43px;
 }
-
 
 .img-pb {
   filter: grayscale(100%);
+}
+
+@media (max-width: 506px) {
+  .rpg-modal-title {
+    margin-top: 30px;
+  }
 }
