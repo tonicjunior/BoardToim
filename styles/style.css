@@ -710,7 +710,7 @@ body.modal-open {
 }
 
 .image-container img {
-  width: 55px;
+  width: 45px;
   height: 100%;
 }
 
@@ -797,7 +797,7 @@ body.modal-open {
 #loading-screen {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 110%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -987,27 +987,27 @@ body.modal-open {
 
 #userListButton {
   width: 100%;
-  position: relative; /* Necessário para posicionar o pseudo-elemento */
-  overflow: hidden; /* Para garantir que nada ultrapasse os limites do botão */
+  position: relative;
+  overflow: hidden;
 }
 
 #userListButton::before {
-  content: ""; /* Necessário para criar o pseudo-elemento */
-  position: absolute; /* Posiciona o pseudo-elemento em relação ao pai */
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../src/assets/images/taverna.png"); /* Imagem de fundo */
+  background-image: url("../src/assets/images/taverna.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.3; /* Ajuste este valor para controlar a transparência da imagem */
+  opacity: 0.3;
 }
 
 #userListButton > * {
-  position: relative; /* Para garantir que o conteúdo fique acima do pseudo-elemento */
-  z-index: 1; /* Garante que o conteúdo esteja acima da imagem */
+  position: relative;
+  z-index: 1;
 }
 
 .taverna-loading-overlay {
@@ -1144,4 +1144,148 @@ body.modal-open {
   .rpg-modal-title {
     margin-top: 30px;
   }
+}
+
+@media (max-width: 454px) {
+  .info-icons {
+    grid-template-columns: auto !important;
+  }
+  .table-battle {
+    padding: 10px;
+  }
+}
+
+.table-battle {
+  display: flex;
+  width: 90% !important;
+  justify-content: center;
+}
+.table-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.table-title {
+  display: flex;
+  align-items: center;
+  font-family: "Fantasy", cursive; /* Fonte do texto */
+}
+
+.info-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+  gap: 7px;
+  justify-items: center;
+  margin: 20px 0px;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.toggle-button {
+  background-color: #d2b48c;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  transition: background-color 0.5s ease,
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-content {
+  overflow: hidden;
+  transform-origin: top center;
+  transition: max-height 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-content.hidden {
+  max-height: 0;
+  transform: scaleY(0);
+}
+
+.scroll-content.visible {
+  max-height: 1500px;
+  transform: scaleY(1);
+}
+
+.toggle-button:hover {
+  background-color: #d7a04a;
+  transform: scale(1.05);
+}
+
+.active-toggle {
+  background-color: #d7a04a;
+  transform: scale(1.05);
+}
+
+.info-icons-game {
+  border-radius: 0px 0px 8px 8px;
+  background: #f7f1e3;
+  font-family: "Garamond", serif;
+  width: 100%;
+}
+
+.table-body-game {
+  margin: 5px;
+}
+
+.table-content-game {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.table-content-game span {
+  display: block;
+}
+
+.btn-info {
+  color: white;
+  background-color: #a0512d80;
+  font-size: 0.8rem;
+  border: 2px solid #4b1902b7;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn-info:hover {
+  background-color: #4b1902b7;
+  transform: scale(1.15);
+}
+
+.active {
+  background-color: #4b1902b7;
+  transform: scale(1.15);
+}
+
+.info-version {
+  font-size: 0.6rem;
+  margin: 10px 0px;
+  font-style: italic;
+  color: #333;
+  display: flex;
+  justify-content: flex-end;
 }
