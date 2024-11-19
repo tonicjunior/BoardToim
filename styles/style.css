@@ -1193,6 +1193,7 @@ body.modal-open {
 }
 
 .toggle-button {
+  color: #000000;
   background-color: #d2b48c;
   border: none;
   padding: 10px 20px;
