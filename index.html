@@ -185,7 +185,87 @@
           Cada jogador comanda um exército de peças lendárias, cada uma com
           habilidades especiais e destemidas. Prepare-se para uma batalha épica:
         </h5>
-
+        <div class="scroll-container">
+          <button class="toggle-button" onclick="toggleScrollContent()">
+            <span class="toggle-text">Expandir</span> Pergaminhos
+          </button>
+          <div class="scroll-content hidden">
+            <div class="info-icons">
+              <div class="table-battle rpg-modal-content">
+                <div class="table-body">
+                  <span class="table-title">Icones 💠</span>
+                  <div class="table-content">
+                    <span>⚔️ ➔ Atacar</span>
+                    <span>🏆 ➔ Vitória no duelo</span>
+                    <span>⚰️ ➔ Derrota no duelo</span>
+                    <span>👀 ➔ Revela adversário</span>
+                    <span>🔥 ➔ Eliminação mútua</span>
+                  </div>
+                </div>
+              </div>
+              <div class="table-battle rpg-modal-content">
+                <div class="table-body">
+                  <span class="table-title">Guerreiro 🗡️</span>
+                  <div class="table-content">
+                    <span>🗡️ ➔ ⚔️ ➔ 🐉 | 🏆</span>
+                    <span>🗡️ ➔ ⚔️ ➔ 🗡️ | 🏆</span>
+                    <span>🗡️ ➔ ⚔️ ➔ 🔮 | ⚰️</span>
+                    <span>🗡️ ➔ ⚔️ ➔ 🧙‍♂️ | ⚰️</span>
+                    <span>🗡️ ➔ ⚔️ ➔ 💀 | 🔥</span>
+                  </div>
+                </div>
+              </div>
+              <div class="table-battle rpg-modal-content">
+                <div class="table-body">
+                  <span class="table-title">Bruxa 🔮</span>
+                  <div class="table-content">
+                    <span>🔮 ➔ ⚔️ ➔ 🗡️ | 🏆</span>
+                    <span>🔮 ➔ ⚔️ ➔ 🔮 | 🔥</span>
+                    <span>🔮 ➔ ⚔️ ➔ 🧙‍♂️ | 👀</span>
+                    <span>🔮 ➔ ⚔️ ➔ 💀 | 👀</span>
+                    <span>🔮 ➔ ⚔️ ➔ 🐉 | 👀</span>
+                  </div>
+                </div>
+              </div>
+              <div class="table-battle rpg-modal-content">
+                <div class="table-body">
+                  <span class="table-title">Mago 🧙‍♂️</span>
+                  <div class="table-content">
+                    <span>🧙‍♂️ ➔ ⚔️ ➔ 🗡️ | 🏆</span>
+                    <span>🧙‍♂️ ➔ ⚔️ ➔ 🔮 | 🏆</span>
+                    <span>🧙‍♂️ ➔ ⚔️ ➔ 🧙‍♂️ | 🏆</span>
+                    <span>🧙‍♂️ ➔ ⚔️ ➔ 💀 | 🔥</span>
+                    <span>🧙‍♂️ ➔ ⚔️ ➔ 🐉 | ⚰️</span>
+                  </div>
+                </div>
+              </div>
+              <div class="table-battle rpg-modal-content">
+                <div class="table-body">
+                  <span class="table-title">Morte 💀</span>
+                  <div class="table-content">
+                    <span>💀 ➔ ⚔️ ➔ 🗡️ | 🔥</span>
+                    <span>💀 ➔ ⚔️ ➔ 🔮 | 🏆</span>
+                    <span>💀 ➔ ⚔️ ➔ 🧙‍♂️ | 🔥</span>
+                    <span>💀 ➔ ⚔️ ➔ 💀 | 🔥</span>
+                    <span>💀 ➔ ⚔️ ➔ 🐉 | ⚰️</span>
+                  </div>
+                </div>
+              </div>
+              <div class="table-battle rpg-modal-content">
+                <div class="table-body">
+                  <span class="table-title">Dragão 🐉</span>
+                  <div class="table-content">
+                    <span>🐉 ➔ ⚔️ ➔ 🗡️ | 🏆</span>
+                    <span>🐉 ➔ ⚔️ ➔ 🔮 | 🏆</span>
+                    <span>🐉 ➔ ⚔️ ➔ 🧙‍♂️ | 🏆</span>
+                    <span>🐉 ➔ ⚔️ ➔ 💀 | 🏆</span>
+                    <span>🐉 ➔ ⚔️ ➔ 🐉 | 🔥</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Lista de peças com descrições limitadas -->
         <ul class="info-list">
           <li>
@@ -194,18 +274,20 @@
             </div>
             <div class="info-text">
               <h6 class="piece-title">
-                Guerreiro (O Aniquilador de Dragões) - 3 peças
+                Guerreiro (O Aniquilador de Dragões 🗡️) - 3 peças
               </h6>
               <div class="info-description">
                 <div class="piece-description" id="description-guerreiros">
-                  Esses heróis de músculos e espadas enfrentam dragões sem
-                  piscar e não hesitam em derrubar outros guerreiros em batalha.
-                  Mas, se ousarem atacar uma Bruxa ou um Mago, suas armaduras se
-                  desfazem, e eles viram poeira. E isso não é tudo – ao atacar a
-                  própria Morte, ela os ceifa e leva suas almas consigo. Sua
-                  defesa pode não ser das melhores, mas ninguém pode negar a
-                  coragem do estilo “vou, mas caio lutando”, algo digno de
-                  admiração.
+                  <p>
+                    Esses heróis de músculos e espadas enfrentam dragões sem
+                    piscar e não hesitam em derrubar outros guerreiros em
+                    batalha. Mas, se ousarem atacar uma Bruxa ou um Mago, suas
+                    armaduras se desfazem, e eles viram poeira. E isso não é
+                    tudo – ao atacar a própria Morte, ela os ceifa e leva suas
+                    almas consigo. Sua defesa pode não ser das melhores, mas
+                    ninguém pode negar a coragem do estilo “vou, mas caio
+                    lutando”, algo digno de admiração.
+                  </p>
                 </div>
                 <button
                   class="button-text"
@@ -223,7 +305,7 @@
             </div>
             <div class="info-text">
               <h6 class="piece-title">
-                Bruxa (A Reveladora de Segredos) - 2 peças
+                Bruxa (A Reveladora de Segredos 🔮) - 2 peças
               </h6>
               <div class="info-description">
                 <div class="piece-description" id="description-bruxas">
@@ -254,7 +336,7 @@
             </div>
             <div class="info-text">
               <h6 class="piece-title">
-                Mago (O Autêntico Feiticeiro do Campo) - 2 peças
+                Mago (O Autêntico Feiticeiro do Campo 🧙‍♂️) - 2 peças
               </h6>
               <div class="info-description">
                 <div class="piece-description" id="description-magos">
@@ -285,7 +367,7 @@
             </div>
             <div class="info-text">
               <h6 class="piece-title">
-                Morte (O Cortejo Silencioso) - 2 peças
+                Morte (O Cortejo Silencioso 💀) - 2 peças
               </h6>
               <div class="info-description">
                 <div class="piece-description" id="description-morte">
@@ -313,7 +395,7 @@
               <span class="pieces-index white"></span>
             </div>
             <div class="info-text">
-              <h6 class="piece-title">*Dragão (O Terror Alado) - 1 peça</h6>
+              <h6 class="piece-title">*Dragão (O Terror Alado 🐉) - 1 peça</h6>
               <div class="info-description">
                 <div class="piece-description" id="description-dragao">
                   O Dragão é o que mais se aproxima de uma força imparável neste
@@ -342,6 +424,7 @@
           conquista a vitória, o jogo recomeça, mas o caos do destino
           redistribui todas as peças. Cada nova batalha reserva surpresas!
         </p>
+        <p class="info-version">version: 2.2.8</p>
       </div>
       <div class="container-buttons mt-4">
         <a
@@ -375,6 +458,49 @@
     </div>
 
     <div id="game-container">
+      <div class="info-icons-game">
+        <div class="controls">
+          <button
+            class="btn-info"
+            onclick="showContent('default')"
+            id="default"
+          >
+            💠
+          </button>
+          <button
+            class="btn-info"
+            onclick="showContent('guerreiro')"
+            id="guerreiro"
+          >
+            🗡️
+          </button>
+          <button class="btn-info" onclick="showContent('bruxa')" id="bruxa">
+            🔮
+          </button>
+          <button class="btn-info" onclick="showContent('mago')" id="mago">
+            🧙‍♂️
+          </button>
+          <button class="btn-info" onclick="showContent('morte')" id="morte">
+            💀
+          </button>
+          <button class="btn-info" onclick="showContent('dragao')" id="dragao">
+            🐉
+          </button>
+        </div>
+        <div class="table-battle-game">
+          <div class="table-body-game">
+            <div class="table-content-game" id="content-area">
+              <span>Icones 💠</span>
+              <span>⚔️ ➔ Atacar</span>
+              <span>🏆 ➔ Vitória no duelo</span>
+              <span>⚰️ ➔ Derrota no duelo</span>
+              <span>👀 ➔ Revela adversário</span>
+              <span>🔥 ➔ Eliminação mútua</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="board"></div>
 
       <div class="timer-container" id="timer-container">
@@ -471,14 +597,14 @@
       <div class="rpg-modal-content">
         <div class="playButton">
           <h3 class="rpg-modal-title">⚔️ Aventureiros Disponíveis</h3>
-          
+
           <img
-          src="src/assets/images/sound.png"
-          id="playPauseButton"
-          class="play-pause-btn"
-          alt="sound"
-          onclick="music()"
-        />
+            src="src/assets/images/sound.png"
+            id="playPauseButton"
+            class="play-pause-btn"
+            alt="sound"
+            onclick="music()"
+          />
         </div>
 
         <div class="loading-div">
@@ -496,6 +622,89 @@
     </div>
 
     <script>
+      const contentData = {
+        default: `
+    <span>Icones 💠</span>
+    <span>⚔️ ➔ Atacar</span>
+    <span>🏆 ➔ Vitória no duelo</span>
+    <span>⚰️ ➔ Derrota no duelo</span>
+    <span>👀 ➔ Revela adversário</span>
+    <span>🔥 ➔ Eliminação mútua</span>
+  `,
+        guerreiro: `
+    <span>Guerreiro 🗡️</span>
+    <span>🗡️ ➔ ⚔️ ➔ 🐉 | 🏆</span>
+    <span>🗡️ ➔ ⚔️ ➔ 🗡️ | 🏆</span>
+    <span>🗡️ ➔ ⚔️ ➔ 🔮 | ⚰️</span>
+    <span>🗡️ ➔ ⚔️ ➔ 🧙‍♂️ | ⚰️</span>
+    <span>🗡️ ➔ ⚔️ ➔ 💀 | 🔥</span>
+  `,
+        bruxa: `
+    <span>Bruxa 🔮</span>
+    <span>🔮 ➔ ⚔️ ➔ 🗡️ | 🏆</span>
+    <span>🔮 ➔ ⚔️ ➔ 🔮 | 🔥</span>
+    <span>🔮 ➔ ⚔️ ➔ 🧙‍♂️ | 👀</span>
+    <span>🔮 ➔ ⚔️ ➔ 💀 | 👀</span>
+    <span>🔮 ➔ ⚔️ ➔ 🐉 | 👀</span>
+  `,
+        mago: `
+    <span>Mago 🧙‍♂️</span>
+    <span>🧙‍♂️ ➔ ⚔️ ➔ 🗡️ | 🏆</span>
+    <span>🧙‍♂️ ➔ ⚔️ ➔ 🔮 | 🏆</span>
+    <span>🧙‍♂️ ➔ ⚔️ ➔ 🧙‍♂️ | 🏆</span>
+    <span>🧙‍♂️ ➔ ⚔️ ➔ 💀 | 🔥</span>
+    <span>🧙‍♂️ ➔ ⚔️ ➔ 🐉 | ⚰️</span>
+  `,
+        morte: `
+    <span>Morte 💀</span>
+    <span>💀 ➔ ⚔️ ➔ 🗡️ | 🔥</span>
+    <span>💀 ➔ ⚔️ ➔ 🔮 | 🏆</span>
+    <span>💀 ➔ ⚔️ ➔ 🧙‍♂️ | 🔥</span>
+    <span>💀 ➔ ⚔️ ➔ 💀 | 🔥</span>
+    <span>💀 ➔ ⚔️ ➔ 🐉 | ⚰️</span>
+  `,
+        dragao: `
+    <span>Dragão 🐉</span>
+    <span>🐉 ➔ ⚔️ ➔ 🗡️ | 🏆</span>
+    <span>🐉 ➔ ⚔️ ➔ 🔮 | 🏆</span>
+    <span>🐉 ➔ ⚔️ ➔ 🧙‍♂️ | 🏆</span>
+    <span>🐉 ➔ ⚔️ ➔ 💀 | 🏆</span>
+    <span>🐉 ➔ ⚔️ ➔ 🐉 | 🔥</span>
+  `,
+      };
+
+      function showContent(type) {
+        const contentArea = document.getElementById("content-area");
+        const button = document.getElementById(type);
+        const buttons = document.querySelectorAll(".btn-info");
+
+        buttons.forEach((button) => {
+          button.classList.remove("active");
+        });
+
+        contentArea.innerHTML = contentData[type] || "Conteúdo não encontrado.";
+        button.classList.add("active");
+      }
+
+      showContent("default");
+
+      function toggleScrollContent() {
+        const scrollContent = document.querySelector(".scroll-content");
+        const toggleButton = document.querySelector(".toggle-button");
+
+        scrollContent.classList.toggle("visible");
+        scrollContent.classList.toggle("hidden");
+
+        // Alterna o texto do botão conforme o estado
+        if (scrollContent.classList.contains("visible")) {
+          toggleButton.classList.add("active-toggle");
+          toggleButton.textContent = "Ocultar Pergaminhos";
+        } else {
+          toggleButton.textContent = "Expandir Pergaminhos";
+          toggleButton.classList.remove("active-toggle");
+        }
+      }
+
       function togglePiece(descriptionId, button) {
         const description = document.getElementById(descriptionId);
         description.classList.toggle("expanded");
