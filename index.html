@@ -181,10 +181,39 @@
           />
           Regras do Jogo
         </h4>
-        <h5 class="info-subtitle">
-          Cada jogador comanda um exército de peças lendárias, cada uma com
-          habilidades especiais e destemidas. Prepare-se para uma batalha épica:
-        </h5>
+        <div class="info-subtitle">
+          <p>
+            Nas extremidades deste campo, tremulam majestosas bandeiras,
+            símbolos de poder supremo. A missão é clara: guiar seu exército
+            através do caos, superar as defesas do inimigo e conquistar a
+            bandeira que repousa em sua fortaleza.
+          </p>
+
+          <ul>
+            <li>
+              ⚔️ A vitória pertence ao destemido: aquele que conduzir uma de
+              suas peças até a bandeira do adversário reivindica o triunfo,
+              marcando o fim da batalha.
+            </li>
+            <li>
+              🎲 Use suas habilidades com sabedoria: cada peça é uma lenda viva,
+              com poderes únicos que podem virar o jogo. Ataque, defenda, ou
+              crie estratégias para surpreender seu oponente e alcançar o
+              destino final.
+            </li>
+            <li>
+              🛡️ Proteja sua bandeira: a derrota é certa para quem subestima a
+              sagacidade do inimigo. Planeje bem cada movimento, pois a menor
+              falha pode significar a queda do seu reinado.
+            </li>
+          </ul>
+
+          <p>
+            Prepare-se, comandante! O destino do reino está em suas mãos. Que as
+            lendas do tabuleiro cantem sua vitória ou lamentem sua derrota!
+          </p>
+        </div>
+
         <div class="scroll-container">
           <button class="toggle-button" onclick="toggleScrollContent()">
             Expandir Pergaminhos
@@ -197,7 +226,7 @@
                   <div class="table-content">
                     <span>⚔️ ➔ Atacar</span>
                     <span>🏆 ➔ Vitória no duelo</span>
-                    <span>⚰️ ➔ Derrota no duelo</span>
+                    <span>💀 ➔ Derrota no duelo</span>
                     <span>👀 ➔ Revela adversário</span>
                     <span>🔥 ➔ Eliminação mútua</span>
                   </div>
@@ -205,61 +234,417 @@
               </div>
               <div class="table-battle rpg-modal-content">
                 <div class="table-body">
-                  <span class="table-title">Guerreiro 🗡️</span>
+                  <span class="table-title">
+                    Guerreiro
+                    <img
+                      src="src/assets/images/c.png"
+                      alt="Guerreiro"
+                      class="character-information t"
+                  /></span>
                   <div class="table-content">
-                    <span>🗡️ ➔ ⚔️ ➔ 🐉 | 🏆</span>
-                    <span>🗡️ ➔ ⚔️ ➔ 🗡️ | 🏆</span>
-                    <span>🗡️ ➔ ⚔️ ➔ 🔮 | ⚰️</span>
-                    <span>🗡️ ➔ ⚔️ ➔ 🧙‍♂️ | ⚰️</span>
-                    <span>🗡️ ➔ ⚔️ ➔ 💀 | 🔥</span>
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 💀</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 💀</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
                   </div>
                 </div>
               </div>
               <div class="table-battle rpg-modal-content">
                 <div class="table-body">
-                  <span class="table-title">Bruxa 🔮</span>
+                  <span class="table-title">
+                    Bruxa
+                    <img
+                      src="src/assets/images/w.png"
+                      alt="Bruxa"
+                      class="character-information t"
+                  /></span>
                   <div class="table-content">
-                    <span>🔮 ➔ ⚔️ ➔ 🗡️ | 🏆</span>
-                    <span>🔮 ➔ ⚔️ ➔ 🔮 | 🔥</span>
-                    <span>🔮 ➔ ⚔️ ➔ 🧙‍♂️ | 👀</span>
-                    <span>🔮 ➔ ⚔️ ➔ 💀 | 👀</span>
-                    <span>🔮 ➔ ⚔️ ➔ 🐉 | 👀</span>
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 👀</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 👀</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 👀</span
+                    >
                   </div>
                 </div>
               </div>
               <div class="table-battle rpg-modal-content">
                 <div class="table-body">
-                  <span class="table-title">Mago 🧙‍♂️</span>
+                  <span class="table-title">
+                    Mago
+                    <img
+                      src="src/assets/images/m.png"
+                      alt="Mago"
+                      class="character-information t"
+                    />
+                  </span>
                   <div class="table-content">
-                    <span>🧙‍♂️ ➔ ⚔️ ➔ 🗡️ | 🏆</span>
-                    <span>🧙‍♂️ ➔ ⚔️ ➔ 🔮 | 🏆</span>
-                    <span>🧙‍♂️ ➔ ⚔️ ➔ 🧙‍♂️ | 🏆</span>
-                    <span>🧙‍♂️ ➔ ⚔️ ➔ 💀 | 🔥</span>
-                    <span>🧙‍♂️ ➔ ⚔️ ➔ 🐉 | ⚰️</span>
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 💀</span
+                    >
                   </div>
                 </div>
               </div>
               <div class="table-battle rpg-modal-content">
                 <div class="table-body">
-                  <span class="table-title">Morte 💀</span>
+                  <span class="table-title"
+                    >Morte
+                    <img
+                      src="src/assets/images/f.png"
+                      alt="Morte"
+                      class="character-information t"
+                  /></span>
                   <div class="table-content">
-                    <span>💀 ➔ ⚔️ ➔ 🗡️ | 🔥</span>
-                    <span>💀 ➔ ⚔️ ➔ 🔮 | 🏆</span>
-                    <span>💀 ➔ ⚔️ ➔ 🧙‍♂️ | 🔥</span>
-                    <span>💀 ➔ ⚔️ ➔ 💀 | 🔥</span>
-                    <span>💀 ➔ ⚔️ ➔ 🐉 | ⚰️</span>
+                    <span>
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 💀</span
+                    >
                   </div>
                 </div>
               </div>
               <div class="table-battle rpg-modal-content">
                 <div class="table-body">
-                  <span class="table-title">Dragão 🐉</span>
+                  <span class="table-title"
+                    >Dragão
+                    <img
+                      src="src/assets/images/d.png"
+                      alt="Dragão"
+                      class="character-information t"
+                  /></span>
                   <div class="table-content">
-                    <span>🐉 ➔ ⚔️ ➔ 🗡️ | 🏆</span>
-                    <span>🐉 ➔ ⚔️ ➔ 🔮 | 🏆</span>
-                    <span>🐉 ➔ ⚔️ ➔ 🧙‍♂️ | 🏆</span>
-                    <span>🐉 ➔ ⚔️ ➔ 💀 | 🏆</span>
-                    <span>🐉 ➔ ⚔️ ➔ 🐉 | 🔥</span>
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
                   </div>
                 </div>
               </div>
@@ -274,7 +659,7 @@
             </div>
             <div class="info-text">
               <h6 class="piece-title">
-                Guerreiro (O Aniquilador de Dragões 🗡️) - 3 peças
+                Guerreiro (O Aniquilador de Dragões) - 3 peças
               </h6>
               <div class="info-description">
                 <div class="piece-description" id="description-guerreiros">
@@ -305,7 +690,7 @@
             </div>
             <div class="info-text">
               <h6 class="piece-title">
-                Bruxa (A Reveladora de Segredos 🔮) - 2 peças
+                Bruxa (A Reveladora de Segredos) - 2 peças
               </h6>
               <div class="info-description">
                 <div class="piece-description" id="description-bruxas">
@@ -336,7 +721,7 @@
             </div>
             <div class="info-text">
               <h6 class="piece-title">
-                Mago (O Autêntico Feiticeiro do Campo 🧙‍♂️) - 2 peças
+                Mago (O Autêntico Feiticeiro do Campo) - 2 peças
               </h6>
               <div class="info-description">
                 <div class="piece-description" id="description-magos">
@@ -367,7 +752,7 @@
             </div>
             <div class="info-text">
               <h6 class="piece-title">
-                Morte (O Cortejo Silencioso 💀) - 2 peças
+                Morte (O Cortejo Silencioso) - 2 peças
               </h6>
               <div class="info-description">
                 <div class="piece-description" id="description-morte">
@@ -395,7 +780,7 @@
               <span class="pieces-index white"></span>
             </div>
             <div class="info-text">
-              <h6 class="piece-title">*Dragão (O Terror Alado 🐉) - 1 peça</h6>
+              <h6 class="piece-title">*Dragão (O Terror Alado) - 1 peça</h6>
               <div class="info-description">
                 <div class="piece-description" id="description-dragao">
                   O Dragão é o que mais se aproxima de uma força imparável neste
@@ -424,7 +809,7 @@
           conquista a vitória, o jogo recomeça, mas o caos do destino
           redistribui todas as peças. Cada nova batalha reserva surpresas!
         </p>
-        <p class="info-version">version: 2.4.9</p>
+        <p class="info-version">version: 3.0.0</p>
       </div>
       <div class="container-buttons mt-4">
         <a
@@ -472,19 +857,39 @@
             onclick="showContent('guerreiro')"
             id="guerreiro"
           >
-            🗡️
+            <img
+              src="src/assets/images/c.png"
+              alt="Guerreiro"
+              class="character-information g"
+            />
           </button>
           <button class="btn-info" onclick="showContent('bruxa')" id="bruxa">
-            🔮
+            <img
+              src="src/assets/images/w.png"
+              alt="Bruxa"
+              class="character-information g"
+            />
           </button>
           <button class="btn-info" onclick="showContent('mago')" id="mago">
-            🧙‍♂️
+            <img
+              src="src/assets/images/m.png"
+              alt="Mago"
+              class="character-information g"
+            />
           </button>
           <button class="btn-info" onclick="showContent('morte')" id="morte">
-            💀
+            <img
+              src="src/assets/images/f.png"
+              alt="Morte"
+              class="character-information g"
+            />
           </button>
           <button class="btn-info" onclick="showContent('dragao')" id="dragao">
-            🐉
+            <img
+              src="src/assets/images/d.png"
+              alt="Dragão"
+              class="character-information g"
+            />
           </button>
         </div>
         <div class="table-battle-game">
@@ -493,7 +898,7 @@
               <span>Icones 💠</span>
               <span>⚔️ ➔ Atacar</span>
               <span>🏆 ➔ Vitória no duelo</span>
-              <span>⚰️ ➔ Derrota no duelo</span>
+              <span>💀 ➔ Derrota no duelo</span>
               <span>👀 ➔ Revela adversário</span>
               <span>🔥 ➔ Eliminação mútua</span>
             </div>
@@ -627,49 +1032,405 @@
     <span>Icones 💠</span>
     <span>⚔️ ➔ Atacar</span>
     <span>🏆 ➔ Vitória no duelo</span>
-    <span>⚰️ ➔ Derrota no duelo</span>
+    <span>💀 ➔ Derrota no duelo</span>
     <span>👀 ➔ Revela adversário</span>
     <span>🔥 ➔ Eliminação mútua</span>
   `,
-        guerreiro: `
-    <span>Guerreiro 🗡️</span>
-    <span>🗡️ ➔ ⚔️ ➔ 🐉 | 🏆</span>
-    <span>🗡️ ➔ ⚔️ ➔ 🗡️ | 🏆</span>
-    <span>🗡️ ➔ ⚔️ ➔ 🔮 | ⚰️</span>
-    <span>🗡️ ➔ ⚔️ ➔ 🧙‍♂️ | ⚰️</span>
-    <span>🗡️ ➔ ⚔️ ➔ 💀 | 🔥</span>
+        guerreiro: `   
+                  <span class="table-title">
+                    Guerreiro
+                    <img
+                      src="src/assets/images/c.png"
+                      alt="Guerreiro"
+                      class="character-information t"
+                  /></span>
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 💀</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 💀</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
   `,
         bruxa: `
-    <span>Bruxa 🔮</span>
-    <span>🔮 ➔ ⚔️ ➔ 🗡️ | 🏆</span>
-    <span>🔮 ➔ ⚔️ ➔ 🔮 | 🔥</span>
-    <span>🔮 ➔ ⚔️ ➔ 🧙‍♂️ | 👀</span>
-    <span>🔮 ➔ ⚔️ ➔ 💀 | 👀</span>
-    <span>🔮 ➔ ⚔️ ➔ 🐉 | 👀</span>
+                  <span class="table-title">
+                    Bruxa
+                    <img
+                      src="src/assets/images/w.png"
+                      alt="Bruxa"
+                      class="character-information t"
+                  /></span>
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 👀</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 👀</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 👀</span
+                    >
   `,
         mago: `
-    <span>Mago 🧙‍♂️</span>
-    <span>🧙‍♂️ ➔ ⚔️ ➔ 🗡️ | 🏆</span>
-    <span>🧙‍♂️ ➔ ⚔️ ➔ 🔮 | 🏆</span>
-    <span>🧙‍♂️ ➔ ⚔️ ➔ 🧙‍♂️ | 🏆</span>
-    <span>🧙‍♂️ ➔ ⚔️ ➔ 💀 | 🔥</span>
-    <span>🧙‍♂️ ➔ ⚔️ ➔ 🐉 | ⚰️</span>
+                  <span class="table-title">
+                    Mago
+                    <img
+                      src="src/assets/images/m.png"
+                      alt="Mago"
+                      class="character-information t"
+                    />
+                  </span>
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span>
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 💀</span
+                    >
   `,
         morte: `
-    <span>Morte 💀</span>
-    <span>💀 ➔ ⚔️ ➔ 🗡️ | 🔥</span>
-    <span>💀 ➔ ⚔️ ➔ 🔮 | 🏆</span>
-    <span>💀 ➔ ⚔️ ➔ 🧙‍♂️ | 🔥</span>
-    <span>💀 ➔ ⚔️ ➔ 💀 | 🔥</span>
-    <span>💀 ➔ ⚔️ ➔ 🐉 | ⚰️</span>
+                  <span class="table-title"
+                    >Morte
+                    <img
+                      src="src/assets/images/f.png"
+                      alt="Morte"
+                      class="character-information t"
+                  /></span>
+                    <span>
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 💀</span
+                    >
   `,
         dragao: `
-    <span>Dragão 🐉</span>
-    <span>🐉 ➔ ⚔️ ➔ 🗡️ | 🏆</span>
-    <span>🐉 ➔ ⚔️ ➔ 🔮 | 🏆</span>
-    <span>🐉 ➔ ⚔️ ➔ 🧙‍♂️ | 🏆</span>
-    <span>🐉 ➔ ⚔️ ➔ 💀 | 🏆</span>
-    <span>🐉 ➔ ⚔️ ➔ 🐉 | 🔥</span>
+                  <span class="table-title"
+                    >Dragão
+                    <img
+                      src="src/assets/images/d.png"
+                      alt="Dragão"
+                      class="character-information t"
+                  /></span>
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/c.png"
+                        alt="Guerreiro"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/w.png"
+                        alt="Bruxa"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/m.png"
+                        alt="Mago"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/f.png"
+                        alt="Morte"
+                        class="character-information"
+                      />
+                      | 🏆</span
+                    >
+                    <span
+                      ><img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      ➔ ⚔️ ➔
+                      <img
+                        src="src/assets/images/d.png"
+                        alt="Dragão"
+                        class="character-information"
+                      />
+                      | 🔥</span
+                    >
   `,
       };
 
