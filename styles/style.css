@@ -169,6 +169,14 @@ input {
   background-position: center;
 }
 
+.castle {
+  background-image: url(../src/assets/images/bandeira.png);
+  background-size: 82%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+
 .hidden-magic {
   background-image: url(../src/assets/images/pent.png);
   background-size: cover;
@@ -358,6 +366,12 @@ body.modal-open {
   font-size: 1rem;
   margin-bottom: 10px;
   color: #333;
+  font-weight: 500;
+}
+
+.info-subtitle ul {
+  list-style: none; 
+
 }
 
 .info-paragraph {
@@ -1237,6 +1251,7 @@ body.modal-open {
   background: #f7f1e3;
   font-family: "Garamond", serif;
   width: 100%;
+  height: 91px;
 }
 
 .table-body-game {
@@ -1289,4 +1304,55 @@ body.modal-open {
   color: #333;
   display: flex;
   justify-content: flex-end;
+}
+
+.character-information {
+  width: 26px;
+}
+
+.table-content span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.t {
+  width: 18px !important;
+  margin-left: 5px;
+}
+
+.g {
+  width: 17px !important;
+}
+
+.table-content-game img {
+  width: 17px !important;
+}
+
+@media (max-width: 406px) {
+  .scroll-container {
+    margin: 0px;
+  }
+  .table-battle {
+    width: 95% !important;
+  }
+  .table-body {
+    font-size: 12px;
+  }
+
+  .character-information {
+    width: 20px;
+  }
+}
+
+@media (max-width: 326px) {
+  .table-content-game img {
+    width: 14px !important;
+  }
+  .table-content-game {
+    font-size: 0.6rem;
+  }
+  .info-icons-game {
+    height: 85px;
+  }
 }
